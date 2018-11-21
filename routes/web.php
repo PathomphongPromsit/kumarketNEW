@@ -26,3 +26,7 @@ Route::get('adminview', function(){  //add
 Route::get('userview', function(){  //add
     return view('userview');
 });
+
+Route::get('/ban', function () {
+    return view('ban');
+});
