@@ -26,3 +26,8 @@ Route::get('adminview', function(){  //add
 Route::get('userview', function(){  //add
     return view('userview');
 });
+
+
+Route::get('/nae', function () {
+    return view('nae');
+});
