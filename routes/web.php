@@ -33,16 +33,16 @@ Route::get('userview', function(){  //add
 
 Route::get('edit', function(){  //add
     return view('edit');
-});
+})->middleware('admin');
 
 Route::get('settime', function(){  //add
     return view('settime');
-});
+})->middleware('admin');
 
 Route::get('ban', function(){  //add
     return view('ban');
-});
+})->middleware('admin');
 
 Route::get('add', function(){  //add
     return view('add');
-});
+})->middleware('admin');
