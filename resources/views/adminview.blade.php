@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Admin</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet">
+</head>
 <body>
-
-    <h2><center>KU SRC Night Market ADMIN</center></h2>
-    <button type="button" onclick="window.location='{{ url("/settime") }}'">ตั้งเวลา</button>
-    <button type="button" onclick="window.location='{{ url("/print") }}'">พิมพ์</button>
-    <button type="button" onclick="window.location='{{ url("/add") }}'">เพิ่มผู้ใช้</button>
-    <button type="button" onclick="window.location='{{ url("/edit") }}'">แก้ไข</button>
-    <button type="button" onclick="window.location='{{ url("/ban") }}'">แบน</button>
-
-
+  <div class="ui segment">
+  <div class="ui menu">
+    <div class="header item">
+      KU SRC Night Market
+    </div>
+    <a class="item" href="settime">
+      ตั้งเวลา
+    </a>
+    <a class="item" href="print">
+      พิมพ์รายงาน
+    </a>
+    <a class="item" href="add">
+      เพิ่มรายชื่อ
+    </a>
+    <a class="item" href="edit">
+      แก้ไขรายชื่อ
+    </a>
+    <a class="item" href="ban">
+      รายชื่อผู้ถูกระงับ
+    </a>
+    </div>
+  </div>
 </body>
 </html>

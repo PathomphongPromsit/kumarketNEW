@@ -42,11 +42,29 @@ body {font-family: Arial;
 </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-  <h3>Ban page</h3>
-</nav>
+  <div class="ui segment">
+  <div class="ui menu">
+    <div class="header item">
+      KU SRC Night Market
+    </div>
+    <a class="item" href="settime">
+        ตั้งเวลา
+    </a>
+    <a class="item" href="print">
+        พิมพ์รายงาน
+    </a>
+    <a class="item" href="add">
+        เพิ่มรายชื่อ
+    </a>
+    <a class="item" href="edit">
+        แก้ไขรายชื่อ
+    </a>
+    <a class="item" href="ban">
+        รายชื่อผู้ถูกระงับ
+    </a>
+    </div>
 <br>
-<div class="container" id="Ban user">
+<div class="segment" id="Ban user">
   <div div class="card" style="text-align:center">
     <div style="margin:10px;height:50%;overflow:auto;">
     <h3>รายชื่อที่ถูกระงับ</h3>
@@ -102,7 +120,7 @@ body {font-family: Arial;
     </div>
   </div>
 </div>
-
+</div>
 
 </body>
 </html>
