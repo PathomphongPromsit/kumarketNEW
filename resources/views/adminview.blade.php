@@ -236,55 +236,7 @@ body {font-family: Arial;}
 </div>
 
 <div id="Ban user" class="tabcontent">
-  <h3>ระงับผู้ใช้</h3>
-  <p>เพชร แสดงรายชื่อที่โดนระงับบน เลือกติ๊กระงับล่าง ปุ่มบันทึก</p>
-  <div style="height:50%;overflow:auto;">
-    <h3 style="text-align: center;">รายชื่อที่ถูกระงับ</h3>
-    <table class="ptable">
-      <tr class="ptr">
-        <th class="pth">ชื่อ</th>
-        <th class="pth">นามสกุล</th>
-        <th class="pth">ชื่อร้าน</th>
-        <th class="pth"></th>
-      </tr>
-      <?php
-        for ($i=1; $i < 10; $i++) {
-          echo "<tr class=\"ptr\">";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\"><input type=\"checkbox\" id=".$i."></td>";
-          echo "</tr>";
-        }
-       ?>
-    </table>
-  </div>
-  <br>
-      <button type="submit">ยกเลิก Ban</button>
-  <br>
-  <div style="height:50%;overflow:auto;">
-    <h3 style="text-align: center;">รายชื่อที่ยังไม่ถูกระงับ</h3>
-    <table class="ptable">
-      <tr class="ptr">
-        <th class="pth">ชื่อ</th>
-        <th class="pth">นามสกุล</th>
-        <th class="pth">ชื่อร้าน</th>
-        <th class="pth"></th>
-      </tr>
-      <?php
-        for ($i=1; $i < 10; $i++) {
-          echo "<tr class=\"ptr\">";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\"><input type=\"checkbox\" id=".$i."></td>";
-          echo "</tr>";
-        }
-       ?>
-    </table>
-  </div>
-  <br>
-  <button type="submit">Ban</button>
+  <?php include('print.blade.php');?>
 </div>
 
 <script>
