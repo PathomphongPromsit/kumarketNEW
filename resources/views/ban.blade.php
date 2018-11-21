@@ -21,14 +21,13 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <style>
 body {font-family: Arial;}
-.ptable
+.ui.celled.table
 {
   border-collapse: collapse;
   width: 100%;
   height: 50;
 }
-.ptable, .ptd, .pth,.ptr {
-  border: 1px solid black;
+.ui.celled.table, .ptd, .pth,.ptr {
   padding: 5px;
 }
 .pth,.ptd {text-align: left;
@@ -48,13 +47,14 @@ body {font-family: Arial;}
   <div div class="card" style="text-align:center">
     <div style="margin:10px;height:50%;overflow:auto;">
     <h3>รายชื่อที่ถูกระงับ</h3>
-    <table class="ptable" >
+    <table class="ui celled table">
+      <thead>
       <tr class="ptr">
         <th class="pth">ชื่อ</th>
         <th class="pth">นามสกุล</th>
         <th class="pth">ชื่อร้าน</th>
         <th class="pth"></th>
-      </tr>
+      </tr></thead>
       <?php
         for ($i=1; $i < 10; $i++) {
           echo "<tr class=\"ptr\">";
@@ -75,13 +75,14 @@ body {font-family: Arial;}
   <div div class="card" style="text-align:center">
     <div style="margin:10px;height:50%;overflow:auto;">
     <h3 style="text-align: center;">รายชื่อที่ยังไม่ถูกระงับ</h3>
-    <table class="ptable">
+    <table class="ui celled table">
+      <thead>
       <tr class="ptr">
         <th class="pth">ชื่อ</th>
         <th class="pth">นามสกุล</th>
         <th class="pth">ชื่อร้าน</th>
         <th class="pth"></th>
-      </tr>
+      </tr></thead>
       <?php
         for ($i=1; $i < 10; $i++) {
           echo "<tr class=\"ptr\">";
