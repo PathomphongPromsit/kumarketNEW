@@ -20,7 +20,10 @@
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <style>
-body {font-family: Arial;}
+
+body {font-family: Arial;
+  background-color: #ffffff;
+}
 .ui.celled.table
 {
   border-collapse: collapse;
