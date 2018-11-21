@@ -31,16 +31,18 @@ Route::get('userview', function(){  //add
     return view('userview');
 });
 
-});
-    return view('edit');
 Route::get('edit', function(){  //add
+    return view('edit');
 });
-    return view('settime');
-Route::get('/settime', function () {
 
+Route::get('settime', function(){  //add
+    return view('settime');
 });
+
+Route::get('ban', function(){  //add
     return view('ban');
-Route::get('/ban', function () {
 });
+
+Route::get('nae', function(){  //add
     return view('nae');
-Route::get('/nae', function () {
+});
