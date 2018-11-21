@@ -43,6 +43,6 @@ Route::get('ban', function(){  //add
     return view('ban');
 });
 
-Route::get('nae', function(){  //add
-    return view('nae');
+Route::get('add', function(){  //add
+    return view('add');
 });
