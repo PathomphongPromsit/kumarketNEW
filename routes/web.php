@@ -38,3 +38,6 @@ Route::get('/ban', function () {
 Route::get('/settime', function () {
     return view('settime');
 });
+Route::get('edit', function(){  //add
+    return view('edit');
+});
