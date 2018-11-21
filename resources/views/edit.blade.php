@@ -14,19 +14,19 @@
             KU SRC Night Market
           </div>
           <a class="item">
-            Menu 1
+            ตั้งเวลา
           </a>
           <a class="item">
-            Menu 2
+            พิมพ์รายงาน
           </a>
           <a class="item">
-            Menu 3
+            เพิ่มรายชื่อ
           </a>
           <a class="item">
-            Menu 4
+            แก้ไขรายชื่อ
           </a>
           <a class="item">
-            Menu 5
+            รายชื่อผู้ถูกระงับ
           </a>
         </div>
         <h3 style="text-align: center">User Info</h3>
@@ -34,7 +34,7 @@
           <input type="text" placeholder="หมายเลขร้าน">
             <button class="ui button">Search</button>
         </div>
-        <table class="ui celled table" style="text-align: center" height="50">
+        <table class="ui celled table" style="text-align: center">
           <thead>
             <tr><th width="8%"><center>หมายเลขร้าน</center></th>
             <th width="18%"><center>ชื่อ</center></th>
