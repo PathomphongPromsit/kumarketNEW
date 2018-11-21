@@ -9,10 +9,31 @@
 
 </head>
 <body>
-
+  <div class="ui segment">
+<div class="ui menu">
+          <div class="header item">
+            KU SRC Night Market
+          </div>
+          <a class="item" href='settime'>
+            ตั้งเวลา
+          </a>
+          <a class="item" href='print'>
+            พิมพ์รายงาน
+          </a>
+          <a class="item" href='add'>
+            เพิ่มรายชื่อ
+          </a>
+          <a class="item" href='edit'>
+            แก้ไขรายชื่อ
+          </a>
+          <a class="item" href='ban'>
+            รายชื่อผู้ถูกระงับ
+          </a>
+        </div>
       <div class="ui card container" style="width:25%;margin:5%">
           <div class="content">
               <form class="ui form">
+
                 <h4 class="ui dividing header">เพิ่มรายชื่อ</h4>
                   <div class="inline field">
 
@@ -64,7 +85,7 @@
               </form>
           </div>
       </div>
-
+  </div>
 
 
 </body>

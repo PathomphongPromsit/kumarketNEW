@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/print', function () {
     return view('print');
-});
+})->middleware('admin');
 
 Auth::routes();
 
