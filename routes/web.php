@@ -34,3 +34,7 @@ Route::get('userview', function(){  //add
 Route::get('/ban', function () {
     return view('ban');
 });
+
+Route::get('/settime', function () {
+    return view('settime');
+});
