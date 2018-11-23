@@ -12,12 +12,12 @@
                 <div class="panel-heading">Dashboard</div>
                 <?php if(auth()->user()->isAdmin == 1){?>
                 <div class="panel-body">
-                <a href="{{url('adminview')}}">AdminPage</a>
+                <button><a href="{{url('print')}}">AdminPage</a></button>
                 </div>
                 <?php };?> 
                 <?php if(auth()->user()->isAdmin != 1){?>
                 <div class="panel-body">
-                <a href="{{url('userview')}}">UserPage</a>
+                <button><a href="{{url('userview')}}">UserPage</a></button>
                 </div>
                 <?php };?> 
             </div>
