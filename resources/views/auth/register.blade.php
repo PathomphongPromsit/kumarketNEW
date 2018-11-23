@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         <!-- เพิ่ม -->
-                        <div class="form-group row">
+                     <div class="form-group row">
                             <label for="surmane" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
 
                             <div class="col-md-6">
@@ -40,18 +40,66 @@
                         </div>
                         <!-- เพิ่ม -->
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Personal ID') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('Personal ID'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('Personal ID') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
+
+                        <!-- เพิ่ม -->
+                     <div class="form-group row">
+                            <label for="store_name" class="col-md-4 col-form-label text-md-right">{{ __('store_name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="store_name" type="text" class="form-control{{ $errors->has('store_name') ? ' is-invalid' : '' }}" name="store_name" value="{{ old('store_name') }}" required autofocus>
+
+                                @if ($errors->has('store_name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('store_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <!-- เพิ่ม -->
+
+                        <!-- เพิ่ม -->
+                     <div class="form-group row">
+                            <label for="lock" class="col-md-4 col-form-label text-md-right">{{ __('lock') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="lock" type="text" class="form-control{{ $errors->has('lock') ? ' is-invalid' : '' }}" name="lock" value="{{ old('lock') }}" required autofocus>
+
+                                @if ($errors->has('lock'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('lock') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <!-- เพิ่ม -->
+
+                        <!-- เพิ่ม -->
+                     <div class="form-group row">
+                            <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('tel') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="tel" type="text" class="form-control{{ $errors->has('tel') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" required autofocus>
+
+                                @if ($errors->has('tel'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('tel') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <!-- เพิ่ม -->
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
