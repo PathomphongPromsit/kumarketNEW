@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="ui segment">
-<div class="ui menu">
+    <div class="ui menu">
           <div class="header item">
             KU SRC Night Market
           </div>
@@ -30,62 +30,224 @@
             รายชื่อผู้ถูกระงับ
           </a>
         </div>
-      <div class="ui card container" style="width:25%;margin:5%">
-          <div class="content">
-              <form class="ui form">
 
-                <h4 class="ui dividing header">เพิ่มรายชื่อ</h4>
-                  <div class="inline field">
+        <!DOCTYPE html>
+        <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                    <div class="two fields">
-                      <div class="field">
-                        <label>ชื่อ</label>
-                        <input type="text" name="first-name" placeholder="ชื่อ">
-                      </div>
+            <!-- CSRF Token -->
+            <meta name="csrf-token" content="{{ csrf_token() }}">
 
-                      <div class="field">
-                        <label>นามสกุล</label>
-                        <input type="text" name="last-name" placeholder="นามสกุล">
-                      </div>
+            <title>{{ config('app.name', 'Laravel') }}</title>
+
+            <!-- Scripts -->
+            <script src="{{ asset('js/app.js') }}" defer></script>
+
+            <!-- Fonts -->
+            <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+            <!-- Styles -->
+            <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        </head>
+        <body>
+            <div id="app">
+                <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+                    <div class="container">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            {{ config('app.name', 'Laravel') }}
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <!-- Left Side Of Navbar -->
+                            <ul class="navbar-nav mr-auto">
+
+                            </ul>
+
+                            <!-- Right Side Of Navbar -->
+                            <ul class="navbar-nav ml-auto">
+                                <!-- Authentication Links -->
+                                @guest
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        @if (Route::has('register'))
+                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        @endif
+                                    </li>
+                                @else
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                        </a>
+
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                @endguest
+                            </ul>
+                        </div>
                     </div>
-                    <br>
+                </nav>
 
-                    <div class="two fields">
-                      <div class="field">
-                        <label>เลขบัตรประชาชน</label>
-                        <input type="text" name="id-card" placeholder="เลขประชาชน">
+                <main class="py-4">
+                  <div class="container">
+                      <div class="row justify-content-center">
+                          <div class="col-md-8">
+                              <div class="card">
+                                  <div class="card-header">{{ __('Register') }}</div>
+
+                                  <div class="card-body">
+                                      <form method="POST" action="{{ route('register') }}">
+                                          @csrf
+
+                                          <div class="form-group row">
+                                              <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                                              <div class="col-md-6">
+                                                  <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                                                  @if ($errors->has('name'))
+                                                      <span class="invalid-feedback" role="alert">
+                                                          <strong>{{ $errors->first('name') }}</strong>
+                                                      </span>
+                                                  @endif
+                                              </div>
+                                          </div>
+                                          <!-- เพิ่ม -->
+                                       <div class="form-group row">
+                                              <label for="surmane" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
+
+                                              <div class="col-md-6">
+                                                  <input id="surname" type="text" class="form-control{{ $errors->has('sername') ? ' is-invalid' : '' }}" name="surname" value="{{ old('surname') }}" required autofocus>
+
+                                                  @if ($errors->has('surname'))
+                                                      <span class="invalid-feedback" role="alert">
+                                                          <strong>{{ $errors->first('surname') }}</strong>
+                                                      </span>
+                                                  @endif
+                                              </div>
+                                          </div>
+                                          <!-- เพิ่ม -->
+                                          <div class="form-group row">
+                                              <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Personal ID') }}</label>
+
+                                              <div class="col-md-6">
+                                                  <input id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                                  @if ($errors->has('Personal ID'))
+                                                      <span class="invalid-feedback" role="alert">
+                                                          <strong>{{ $errors->first('Personal ID') }}</strong>
+                                                      </span>
+                                                  @endif
+                                              </div>
+                                          </div>
+
+                                          <!-- เพิ่ม -->
+                                       <div class="form-group row">
+                                              <label for="store_name" class="col-md-4 col-form-label text-md-right">{{ __('store_name') }}</label>
+
+                                              <div class="col-md-6">
+                                                  <input id="store_name" type="text" class="form-control{{ $errors->has('store_name') ? ' is-invalid' : '' }}" name="store_name" value="{{ old('store_name') }}" required autofocus>
+
+                                                  @if ($errors->has('store_name'))
+                                                      <span class="invalid-feedback" role="alert">
+                                                          <strong>{{ $errors->first('store_name') }}</strong>
+                                                      </span>
+                                                  @endif
+                                              </div>
+                                          </div>
+                                          <!-- เพิ่ม -->
+
+                                          <!-- เพิ่ม -->
+                                       <div class="form-group row">
+                                              <label for="lock" class="col-md-4 col-form-label text-md-right">{{ __('lock') }}</label>
+
+                                              <div class="col-md-6">
+                                                  <input id="lock" type="text" class="form-control{{ $errors->has('lock') ? ' is-invalid' : '' }}" name="lock" value="{{ old('lock') }}" required autofocus>
+
+                                                  @if ($errors->has('lock'))
+                                                      <span class="invalid-feedback" role="alert">
+                                                          <strong>{{ $errors->first('lock') }}</strong>
+                                                      </span>
+                                                  @endif
+                                              </div>
+                                          </div>
+                                          <!-- เพิ่ม -->
+
+                                          <!-- เพิ่ม -->
+                                       <div class="form-group row">
+                                              <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('tel') }}</label>
+
+                                              <div class="col-md-6">
+                                                  <input id="tel" type="text" class="form-control{{ $errors->has('tel') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" required autofocus>
+
+                                                  @if ($errors->has('tel'))
+                                                      <span class="invalid-feedback" role="alert">
+                                                          <strong>{{ $errors->first('tel') }}</strong>
+                                                      </span>
+                                                  @endif
+                                              </div>
+                                          </div>
+                                          <!-- เพิ่ม -->
+
+                                          <div class="form-group row">
+                                              <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                                              <div class="col-md-6">
+                                                  <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                                  @if ($errors->has('password'))
+                                                      <span class="invalid-feedback" role="alert">
+                                                          <strong>{{ $errors->first('password') }}</strong>
+                                                      </span>
+                                                  @endif
+                                              </div>
+                                          </div>
+
+                                          <div class="form-group row">
+                                              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                                              <div class="col-md-6">
+                                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                              </div>
+                                          </div>
+
+                                          <div class="form-group row mb-0">
+                                              <div class="col-md-6 offset-md-4">
+                                                  <button type="submit" class="btn btn-primary">
+                                                      {{ __('Register') }}
+                                                  </button>
+                                              </div>
+                                          </div>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
-
-                      <div class="field">
-                        <label>เบอร์โทรศัพท์</label>
-                        <input type="text" name="phone" placeholder="เบอร์โทรศัพท์">
-                      </div>
-                    </div>
-
-                    <div class="two fields">
-                      <div class="field">
-                        <label>ชื่อร้าน</label>
-                        <input type="text" name="shop-name" placeholder="ชื่อร้าน">
-                      </div>
-
-                      <div class="field">
-                        <label>เลขร้าน</label>
-                        <input type="text" name="shop-number" placeholder="เลขร้าน">
-                      </div>
-                    </div>
-
-
-                </div>
-                  <br>
-                  <div class="inline field">
-                      <input id="submit" type="button" value="Submit"/>
-                      <input type="reset" name="reset" value=" Reset "/>
-
                   </div>
-              </form>
-          </div>
-      </div>
-  </div>
+                </main>
+            </div>
+        </body>
+        </html>
+
+
+    </div>
 
 
 </body>
