@@ -37,9 +37,7 @@ Route::get('edit', function(){  //add
     return view('edit');
 })->middleware('admin');
 
-Route::get('settime', function(){  //add
-    return view('settime');
-})->middleware('admin');
+Route::get('/settime',['as'=>'times','uses'=>'TimeController@index'])->middleware('admin');
 
 Route::get('ban', function(){  //add
     return view('ban');
