@@ -76,16 +76,16 @@ body {font-family: Arial;
         <th class="pth">ชื่อร้าน</th>
         <th class="pth"></th>
       </tr></thead>
-      <?php
-        for ($i=1; $i < 10; $i++) {
-          echo "<tr class=\"ptr\">";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\"><input type=\"checkbox\" id=".$i."></td>";
-          echo "</tr>";
-        }
-       ?>
+      <tbody>
+        @foreach ($Ban as $B)
+        <tr>
+          <td>{{ $B['name']}}</td>
+          <td>{{ $B['surname']}}</td>
+          <td>{{ $B['store_name']}}</td>
+          <td></td>
+        </tr>
+        @endforeach
+      </tbody>
      </table>
      <br>
       <button class="ui primary button" style="width:200px">ยกเลิก Ban</button>
@@ -104,16 +104,16 @@ body {font-family: Arial;
         <th class="pth">ชื่อร้าน</th>
         <th class="pth"></th>
       </tr></thead>
-      <?php
-        for ($i=1; $i < 10; $i++) {
-          echo "<tr class=\"ptr\">";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\">" .$i. "</td>";
-          echo "<td class=\"ptd\"><input type=\"checkbox\" id=".$i."></td>";
-          echo "</tr>";
-        }
-       ?>
+      <tbody>
+        @foreach ($UnBan as $UB)
+        <tr>
+          <td>{{ $UB['name']}}</td>
+          <td>{{ $UB['surname']}}</td>
+          <td>{{ $UB['store_name']}}</td>
+          <td></td>
+        </tr>
+        @endforeach
+      </tbody>
     </table>
     <br>
     <button class="ui secondary button" style="width:200px">Ban</button>

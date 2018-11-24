@@ -39,9 +39,7 @@ Route::get('edit', function(){  //add
 
 Route::get('/settime',['as'=>'times','uses'=>'TimeController@index'])->middleware('admin');
 
-Route::get('ban', function(){  //add
-    return view('ban');
-})->middleware('admin');
+Route::get('/ban',['as'=>'ban','uses'=>'BanController@index'])->middleware('admin');
 
 Route::get('add', function(){  //add
     return view('add');
