@@ -19,6 +19,8 @@ Route::get('/print', function () {
     return view('print');
 })->middleware('admin');
 
+Route::get('pdf','PDFController@pdf');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

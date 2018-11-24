@@ -27,34 +27,34 @@
           <a class="item" href='ban'>
             รายชื่อผู้ถูกระงับ
           </a>
-        </div>   
+        </div>
 <h3>พิมพ์สรุป</h3>
 <p>ลูกแก้ว รายชื่อที่จะมาวันนี้ ปุ่มบันทึก(โหลดpdf)</p>
-<input type="button" value="Print" onclick="window.location.href='PDF.php'" />
+<input type="button" value="Print" onclick='window.location="http://localhost/kumarketNEW/resources/views/pdf.blade.php"' />
 <table width="100%" border="1">
   <thead>
-    <td colspan="1">หมายเลขร้าน</td>
-    <td colspan="1">ชื่อ</td>
-    <td colspan="1">นามสกุล</td>
-    <td colspan="1">ชื่อร้าน</td>
-    <td colspan="1">เบอร์โทรศัพท์</td>
-    <td colspan="1">หมายเหตุ</td>
+    <th colspan="1">หมายเลขร้าน</th>
+    <th colspan="1">ชื่อ</th>
+    <th colspan="1">นามสกุล</th>
+    <th colspan="1">ชื่อร้าน</th>
+    <th colspan="1">เบอร์โทรศัพท์</th>
+    <th colspan="1">หมายเหตุ</td>
   </thead>
   <tbody>
-    <th>1</th>
-    <th>AAAAAAAAAA</th>
-    <th>BBBBBBBBBB</th>
-    <th>CCCCCCCCCC</th>
-    <th>0800000000</th>
-    <th> </th>
+    <td>1</td>
+    <td>AAAAAAAAAA</td>
+    <td>BBBBBBBBBB</td>
+    <td>CCCCCCCCCC</td>
+    <td>0800000000</td>
+    <td> </td>
   </tbody>
   <tbody>
-    <th>2</th>
-    <th>WWWWWWWW</th>
-    <th>XXXXXXXXXX</th>
-    <th>YYYYYYYYYY</th>
-    <th>0900000000</th>
-    <th> </th>
+    <td>2</td>
+    <td>WWWWWWWW</td>
+    <td>XXXXXXXXXX</td>
+    <td>YYYYYYYYYY</td>
+    <td>0900000000</td>
+    <td> </td>
   </tbody>
 </table>
  </div>
