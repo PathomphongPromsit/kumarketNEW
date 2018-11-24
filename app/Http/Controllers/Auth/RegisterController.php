@@ -76,4 +76,7 @@ class RegisterController extends Controller
             //ไม่ต้องเพิ่ม 'ban', 'come'
         ]);
     }
+    public function showRegistrationForm() {
+        return view('add');
+    }
 }
