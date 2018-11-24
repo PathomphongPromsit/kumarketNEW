@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;  //add
+use Illuminate\Auth\Events\Registered; //add
 
 class RegisterController extends Controller
 {
@@ -28,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/add';  //redirect affter regis
 
     /**
      * Create a new controller instance.
@@ -37,7 +39,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        //$this->middleware('guest');  //add database
+        $this->middleware('admin');
     }
 
     /**
@@ -76,7 +79,17 @@ class RegisterController extends Controller
             //ไม่ต้องเพิ่ม 'ban', 'come'
         ]);
     }
-    public function showRegistrationForm() {
+    public function showRegistrationForm() {   //from register to add
         return view('add');
+    }
+    
+    public function register(Request $request)  //disable auto login
+    {
+        $this->validator($request->all())->validate();
+        event(new Registered($user = $this->create($request->all())));
+        //$this->guard()->login($user);
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+                        
     }
 }
