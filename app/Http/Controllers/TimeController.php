@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Time;
+use App\User;
 
 class TimeController extends Controller
 {
@@ -59,6 +60,26 @@ class TimeController extends Controller
     		return redirect()->route('hotel.index2');
     	}
     }
+
+    public function SetUncome($id)
+    {
+      $Come = User::find($id);
+      dd($Come);
+      $Come->come = null;
+      $Come->save();
+
+      return redirect('userview');
+    }
+
+    public function Setcome($id)
+    {
+      $Come = User::find($id);
+      $Come->come = 1;
+      $Come->save();
+
+      return redirect('userview');
+    }
+
 }
 
 

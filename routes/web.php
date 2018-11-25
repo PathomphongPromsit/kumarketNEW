@@ -42,6 +42,8 @@ Route::get('/ban/{id}/SetUn',['as'=>'Unban','uses'=>'BanController@SetUnban'])->
 Route::get('/ban/{id}/set',['as'=>'Setban','uses'=>'BanController@Setban'])->middleware('admin');
 
 Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview'])->middleware('auth'); //userpage
+Route::get('/user/{id}/SetUn',['as'=>'Uncome','uses'=>'TimeController@SetUncome'])->middleware('auth'); 
+Route::get('/user/{id}/set',['as'=>'Setcome','uses'=>'TimeController@Setcome'])->middleware('auth'); 
 
 
 
