@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -14,6 +13,11 @@ class PDFController extends Controller
       $pdf = PDF::loadView('pdf',['User' => $User]);
       return @$pdf -> stream();
     }
-}
 
-?>
+    public function pdfMos()
+    {
+      $User = User::all();
+      $pdf = PDF::loadView('exPdfMos',['User' => $User]);
+      return @$pdf -> stream();
+    }
+}

@@ -42,3 +42,5 @@ Route::get('/ban',['as'=>'ban','uses'=>'BanController@index'])->middleware('admi
 Route::get('add', function(){  //add
     return view('add');
 })->middleware('admin');
+
+Route::get('exPdfMos','PDFController@pdfMos');
