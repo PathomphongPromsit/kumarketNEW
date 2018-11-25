@@ -8,7 +8,7 @@ use PDF;
 
 class PDFController extends Controller
 {
-    public funtion pdf()
+    public function pdf()
     {
       $User = User::all();
       $pdf = PDF::loadView('pdf',['User' => $User]);
