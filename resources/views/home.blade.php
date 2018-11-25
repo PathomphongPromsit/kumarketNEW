@@ -12,18 +12,16 @@
                 <div class="panel-heading">KU SRC MARKET</div>
                 <?php if(auth()->user()->isAdmin == 1){?>
                 <div class="panel-body">
-                <button><a href="{{url('print')}}">AdminPage</a></button>
+                <a href="{{url('print')}}"><button>AdminPage</button></a>
                 </div>
-                <?php };?> 
+                <?php };?>
                 <?php if(auth()->user()->isAdmin != 1){?>
                 <div class="panel-body">
-                <button><a href="{{url('userview')}}">UserPage</a></button>
+                <a href="{{url('userview')}}"><button>UserPage</button></a>
                 </div>
-                <?php };?> 
+                <?php };?>
             </div>
         </div>
     </div>
 </div>
 @endsection
-
-
