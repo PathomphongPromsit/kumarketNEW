@@ -34,7 +34,7 @@ body {font-family: Arial;
   padding: 5px;
 }
 .pth,.ptd {text-align: left;
-  width: 35%;
+  width: 30%;
   padding: 15px;
 }
 .center {text-align: center;
@@ -82,13 +82,11 @@ body {font-family: Arial;
           <td>{{ $B['name']}}</td>
           <td>{{ $B['surname']}}</td>
           <td>{{ $B['store_name']}}</td>
-          <td></td>
+          <td><a href="{{ route('Unban',$B->id) }}"><button class="ui primary button" >Cancel Ban</button></a></td>
         </tr>
         @endforeach
       </tbody>
      </table>
-     <br>
-      <button class="ui primary button" style="width:200px">ยกเลิก Ban</button>
      </div>
     </div>
     <br>
@@ -102,7 +100,7 @@ body {font-family: Arial;
         <th class="pth">ชื่อ</th>
         <th class="pth">นามสกุล</th>
         <th class="pth">ชื่อร้าน</th>
-        <th class="pth"></th>
+        <th class="pth"> </th>
       </tr></thead>
       <tbody>
         @foreach ($UnBan as $UB)
@@ -110,13 +108,11 @@ body {font-family: Arial;
           <td>{{ $UB['name']}}</td>
           <td>{{ $UB['surname']}}</td>
           <td>{{ $UB['store_name']}}</td>
-          <td></td>
+          <td><a href="{{ route('Setban',$UB->id) }}"><button class="ui primary button" >Ban</button></a></td>
         </tr>
         @endforeach
       </tbody>
     </table>
-    <br>
-    <button class="ui secondary button" style="width:200px">Ban</button>
     </div>
   </div>
 </div>

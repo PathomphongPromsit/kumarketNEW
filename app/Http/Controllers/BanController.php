@@ -19,4 +19,22 @@ class BanController extends Controller
       );
       return view('ban',$data,$data1);
     }
+
+    public function SetUnban($id)
+    {
+      $Ban = User::find($id);
+      $Ban->ban = null;
+      $Ban->save();
+
+      return redirect('ban');
+    }
+
+    public function Setban($id)
+    {
+      $Ban = User::find($id);
+      $Ban->ban = 1;
+      $Ban->save();
+
+      return redirect('ban');
+    }
 }
