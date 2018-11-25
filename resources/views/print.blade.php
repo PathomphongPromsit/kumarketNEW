@@ -2,9 +2,29 @@
   <head><title>User</title><link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-  </head>
+  <script src="{{ asset('js/app.js') }}" defer></script>
+  
   <style>
+  body {font-family: Arial;
+  background-color: #ffffff;
+  }
+  .ui.celled.table
+  {
+    border-collapse: collapse;
+    width: 100%;
+    height: 50;
+  }
+  .ui.celled.table, .ptd, .pth,.ptr {
+    padding: 5px;
+  }
+  .pth,.ptd {text-align: left;
+    width: 30%;
+    padding: 15px;
+  }
+  .center {text-align: center;
+  }
   </style>
+  </head>
   <body>
 
    <div class="ui segment">
@@ -28,11 +48,13 @@
             รายชื่อผู้ถูกระงับ
           </a>
         </div>
-<h3>พิมพ์สรุป</h3>
-<p>ลูกแก้ว รายชื่อที่จะมาวันนี้ ปุ่มบันทึก(โหลดpdf)</p>
-<td><button onclick="location.href='{{ url('pdf') }}'">
+<div div class="card" style="text-align:center">
+    <div style="margin:10px;overflow:auto;">
+    <h3>พิมพ์สรุป</h3>
+<td><button style="float: center;width: 90px;height: 40px;font-weight: bold;" onclick="location.href='{{ url('pdf') }}'">
      Print</button></td>
-<table width="100%" border="1">
+     <br>
+<table class="ui celled table">
   <thead>
     <th colspan="1">หมายเลขร้าน</th>
     <th colspan="1">ชื่อ</th>
