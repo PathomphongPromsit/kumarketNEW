@@ -12,7 +12,9 @@
   <div class="ui segment">
     <div class="ui menu">
           <div class="header item">
+            <a class="item" href='home'>
             KU SRC Night Market
+            </a>
           </div>
           <a class="item" href='settime'>
             ตั้งเวลา

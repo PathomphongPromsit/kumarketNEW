@@ -9,8 +9,10 @@
     <div class="ui segment">
       <form class="ui form">
         <div class="ui menu">
-          <div class="header item">
+					<div class="header item">
+            <a class="item" href='home'>
             KU SRC Night Market
+            </a>
           </div>
           <a class="item" href='settime'>
             ตั้งเวลา
@@ -28,7 +30,7 @@
             รายชื่อผู้ถูกระงับ
           </a>
         </div>
-        
+
         <div id="Set time" class="tabcontent">
         @foreach($times as $time)
           <form>

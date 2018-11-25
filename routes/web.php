@@ -11,37 +11,38 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () {  //
     return view('auth.login');
 });
 
-Route::get('/print', function () {
-    return view('print');
-})->middleware('admin');
+Auth::routes(); //auth
 
-Route::get('pdf','PDFController@pdfview')->middleware('admin');
-Route::get('print','PrintController@userview')->middleware('admin');
+Route::get('/home', 'HomeController@index')->name('home');//home
+Route::get('admin/routes', 'HomeController@admin')->middleware('admin');//adminpage
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('admin/routes', 'HomeController@admin')->middleware('admin');//add
-Route::get('adminview', function(){  //add
+Route::get('adminview', function(){  //adminview
     return view('adminview');
 })->middleware('admin');
 
-Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview']);
+Route::resource('settime', 'TimeController');//settime
 
-Route::get('edit', function(){  //add
-    return view('edit');
-})->middleware('admin');
-
-Route::get('/settime',['as'=>'times','uses'=>'TimeController@index'])->middleware('admin');
-
-Route::get('/ban',['as'=>'ban','uses'=>'BanController@index'])->middleware('admin');
-Route::get('/ban/{id}/SetUn',['as'=>'Unban','uses'=>'BanController@SetUnban'])->middleware('admin');
-Route::get('/ban/{id}/set',['as'=>'Setban','uses'=>'BanController@Setban'])->middleware('admin');
+Route::get('print','PrintController@userview')->middleware('admin'); //print
+Route::get('pdf','PDFController@pdfview')->middleware('admin');  //pdf
 
 Route::get('add', function(){  //add
     return view('add');
 })->middleware('admin');
+
+Route::get('edit', function(){  //edit
+    return view('edit');
+})->middleware('admin');
+
+Route::get('/ban',['as'=>'ban','uses'=>'BanController@index'])->middleware('admin'); //ban
+Route::get('/ban/{id}/SetUn',['as'=>'Unban','uses'=>'BanController@SetUnban'])->middleware('admin');
+Route::get('/ban/{id}/set',['as'=>'Setban','uses'=>'BanController@Setban'])->middleware('admin');
+
+Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview'])->middleware('auth'); //userpage
+
+
+
+

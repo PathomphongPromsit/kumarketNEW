@@ -45,7 +45,9 @@ body {font-family: Arial;
   <div class="ui segment">
   <div class="ui menu">
     <div class="header item">
+      <a class="item" href='home'>
       KU SRC Night Market
+      </a>
     </div>
     <a class="item" href="settime">
         ตั้งเวลา
@@ -68,12 +70,14 @@ body {font-family: Arial;
   <div div class="card" style="text-align:center">
     <div style="margin:10px;height:50%;overflow:auto;">
     <h3>รายชื่อที่ถูกระงับ</h3>
+    <br>
     <table class="ui celled table">
       <thead>
       <tr class="ptr">
         <th class="pth">ชื่อ</th>
         <th class="pth">นามสกุล</th>
         <th class="pth">ชื่อร้าน</th>
+        <th class="pth">เบอร์โทร</th>
         <th class="pth"></th>
       </tr></thead>
       <tbody>
@@ -82,6 +86,7 @@ body {font-family: Arial;
           <td>{{ $B['name']}}</td>
           <td>{{ $B['surname']}}</td>
           <td>{{ $B['store_name']}}</td>
+          <td>{{ $B['tel']}}</td>
           <td><a href="{{ route('Unban',$B->id) }}"><button class="ui primary button" >Cancel Ban</button></a></td>
         </tr>
         @endforeach
@@ -100,7 +105,8 @@ body {font-family: Arial;
         <th class="pth">ชื่อ</th>
         <th class="pth">นามสกุล</th>
         <th class="pth">ชื่อร้าน</th>
-        <th class="pth"> </th>
+        <th class="pth">เบอร์โทร </th>
+        <th class="pth"></th>
       </tr></thead>
       <tbody>
         @foreach ($UnBan as $UB)
@@ -108,6 +114,7 @@ body {font-family: Arial;
           <td>{{ $UB['name']}}</td>
           <td>{{ $UB['surname']}}</td>
           <td>{{ $UB['store_name']}}</td>
+          <td>{{ $UB['tel']}}</td>
           <td><a href="{{ route('Setban',$UB->id) }}"><button class="ui primary button" >Ban</button></a></td>
         </tr>
         @endforeach

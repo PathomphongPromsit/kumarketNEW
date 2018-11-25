@@ -10,8 +10,10 @@
     <div class="ui segment">
       <form class="ui form">
         <div class="ui menu">
-          <div class="header item">
+					<div class="header item">
+            <a class="item" href='home'>
             KU SRC Night Market
+            </a>
           </div>
           <a class="item" href='settime'>
             ตั้งเวลา
@@ -54,7 +56,7 @@
               <td data-label="ชื่อร้าน">FigureMoe</td>
               <td data-label="เบอร์โทรศัพท์">0899999999</td>
               <td data-label="รหัสผ่าน">15975357</td>
-              <td><center><button class="mini ui button" id=12> 
+              <td><center><button class="mini ui button" id=12>
                     Edit
                   </button>
                   <button class="mini ui button">
@@ -146,11 +148,10 @@
 
       </script>
 
-      
 
-      
+
+
     </div>
 
   </body>
 </html>
-
