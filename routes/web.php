@@ -19,7 +19,8 @@ Route::get('/print', function () {
     return view('print');
 })->middleware('admin');
 
-Route::get('pdf','PDFController@pdf');
+Route::get('pdf','PDFController@pdfview');
+Route::get('print','PrintController@userview');
 
 Auth::routes();
 
@@ -44,5 +45,3 @@ Route::get('/ban/{id}/set',['as'=>'Setban','uses'=>'BanController@Setban'])->mid
 Route::get('add', function(){  //add
     return view('add');
 })->middleware('admin');
-
-Route::get('exPdfMos','PDFController@pdfMos');

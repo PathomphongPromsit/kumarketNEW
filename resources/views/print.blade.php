@@ -30,7 +30,8 @@
         </div>
 <h3>พิมพ์สรุป</h3>
 <p>ลูกแก้ว รายชื่อที่จะมาวันนี้ ปุ่มบันทึก(โหลดpdf)</p>
-<input type="button" value="Print" onclick='window.location="http://localhost/kumarketNEW/resources/views/pdf.blade.php"' />
+<td><button onclick="location.href='{{ url('pdf') }}'">
+     Print</button></td>
 <table width="100%" border="1">
   <thead>
     <th colspan="1">หมายเลขร้าน</th>
@@ -41,21 +42,21 @@
     <th colspan="1">หมายเหตุ</td>
   </thead>
   <tbody>
-    <td>1</td>
-    <td>AAAAAAAAAA</td>
-    <td>BBBBBBBBBB</td>
-    <td>CCCCCCCCCC</td>
-    <td>0800000000</td>
-    <td> </td>
-  </tbody>
-  <tbody>
-    <td>2</td>
-    <td>WWWWWWWW</td>
-    <td>XXXXXXXXXX</td>
-    <td>YYYYYYYYYY</td>
-    <td>0900000000</td>
-    <td> </td>
-  </tbody>
+        @foreach ($User as $u)
+          @if($u->admin != 1)
+            @if($u->come == 1)
+              <tr>
+              <td>{{$u['lock']}}</td>
+              <td>{{$u['name']}}</td>
+              <td>{{$u['surname']}}</td>
+              <td>{{$u['store_name']}}</td>
+              <td>{{$u['tel']}}</td>
+              <td> </td>
+              </tr>
+            @endif
+          @endif
+        @endforeach
+    </tbody>
 </table>
  </div>
   </body>
