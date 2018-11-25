@@ -56,19 +56,19 @@
      <br>
 <table class="ui celled table">
   <thead>
-    <th colspan="1">หมายเลขร้าน</th>
-    <th colspan="1">ชื่อ</th>
-    <th colspan="1">นามสกุล</th>
-    <th colspan="1">ชื่อร้าน</th>
-    <th colspan="1">เบอร์โทรศัพท์</th>
-    <th colspan="1">หมายเหตุ</td>
+    <th colspan="1" width="10%" >หมายเลขร้าน</th>
+    <th colspan="1" width="20%" >ชื่อ</th>
+    <th colspan="1" width="20%" >นามสกุล</th>
+    <th colspan="1" width="20%" >ชื่อร้าน</th>
+    <th colspan="1" width="15%" >เบอร์โทรศัพท์</th>
+    <th colspan="1" width="15%" >หมายเหตุ</td>
   </thead>
   <tbody>
         @foreach ($User as $u)
           @if($u->admin != 1)
             @if($u->come == 1)
               <tr>
-              <td>{{$u['lock']}}</td>
+              <td >{{$u['lock']}}</td>
               <td>{{$u['name']}}</td>
               <td>{{$u['surname']}}</td>
               <td>{{$u['store_name']}}</td>
