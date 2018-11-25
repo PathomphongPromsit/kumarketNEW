@@ -19,6 +19,13 @@ class TimeController extends Controller
 
         return view('settime', ['times' => $times]);
     }
+    
+    public function userview()
+    {
+        $times = Time::all();
+
+        return view('userview', ['times' => $times]);
+    }
 }
 
 

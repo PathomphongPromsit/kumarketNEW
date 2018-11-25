@@ -29,9 +29,7 @@ Route::get('adminview', function(){  //add
     return view('adminview');
 })->middleware('admin');
 
-Route::get('userview', function(){  //add
-    return view('userview');
-});
+Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview']);
 
 Route::get('edit', function(){  //add
     return view('edit');
