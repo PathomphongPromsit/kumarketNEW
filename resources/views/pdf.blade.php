@@ -40,16 +40,16 @@
 
 <body>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <h3>ร้านที่มาขาย</h3>
+    <h3 align="center">ร้านที่มาขาย</h3>
     <table border="1" width = "100%">
     <thead>
     <tr>
-        <td>หมายเลขร้าน</td>
-        <td>ชื่อ</td>
-        <td>นามสกุล</td>
-        <td>ชื่อร้าน</td>
-        <td>เบอร์โทรศัพท์</td>
-        <td>หมายเหตุ</td>
+        <th align="center">หมายเลขร้าน</th>
+        <th align="center">ชื่อ</th>
+        <th align="center">นามสกุล</th>
+        <th align="center">ชื่อร้าน</th>
+        <th align="center">เบอร์โทรศัพท์</th>
+        <th align="center">หมายเหตุ</th>
     </tr>
     </thead>
     <tbody>
