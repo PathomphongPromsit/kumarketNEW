@@ -160,8 +160,8 @@
 							<?php if($online == 'Yes'){?>
 								<?php if(Auth::user()->ban != 1){?>
 									<form>
-										<button class="ui green button" ><a href="{{ route('Setcome',Auth::user()->id) }}" style="color:white;">มา</a></button>
-										<button class="ui red button" ><a href="{{ route('Uncome',Auth::user()->id) }}" style="color:white;">ไม่มา</a></button>
+										<a href="{{ route('Setcome',Auth::user()->id) }}" style="color:white;" class="ui green button">มา</a>
+										<a href="{{ route('Uncome',Auth::user()->id) }}" style="color:white;" class="ui red button">ไม่มา</a>
 									</form>
 								<?php };?>
 							<?php };?>

@@ -1,6 +1,9 @@
 @extends('layout')
 
 @section('content')
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet">
+</head>
 <style>
   .uper {
     margin-top: 40px;
@@ -80,8 +83,8 @@
           <label for="announce">ประกาศ</label>
           <input type="text" class="form-control" name="announce" value={{ $time->announce }} />
         </div>
-        <td><a href="{{ route('settime.index')}}" class="btn btn-primary">กลับ</a></td>
-        <button type="submit" class="btn btn-primary">บันทึก</button>
+        <td><a href="{{ route('settime.index')}}" class="ui blue button">กลับ</a></td>
+        <button type="submit" class="ui green button">บันทึก</button>
       </form>
   </div>
 </div>
