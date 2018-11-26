@@ -17,4 +17,10 @@ class PrintController extends Controller
 
         return view('print', ['User' => $user], ['times' => $time]);
     }
+
+    public function resetcome()
+    {
+        User::query()->update(['come' => NULL]);
+        return redirect('print')->with('success', 'database has been updated');
+    }
 }

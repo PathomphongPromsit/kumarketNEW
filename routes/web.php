@@ -27,6 +27,7 @@ Route::get('adminview', function(){  //adminview
 Route::resource('settime', 'TimeController')->middleware('admin');//settime
 
 Route::get('print','PrintController@userview')->middleware('admin'); //print
+Route::get('print/resetcome','PrintController@resetcome')->middleware('admin'); //print
 Route::get('pdf','PDFController@pdfview')->middleware('admin');  //pdf
 
 
