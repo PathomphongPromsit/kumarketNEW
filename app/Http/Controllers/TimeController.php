@@ -121,7 +121,7 @@ class TimeController extends Controller
       $Come->come = 1;
       $Come->save();
 
-      return redirect();
+      return redirect('userview')->with('success', 'Stock has been updated');;
     }
     public function SetUncome($id)
     {
@@ -129,6 +129,6 @@ class TimeController extends Controller
       $Come->come = null;
       $Come->save();
 
-      return redirect();
+      return redirect('userview')->with('success', 'Stock has been updated');;
     }
 }

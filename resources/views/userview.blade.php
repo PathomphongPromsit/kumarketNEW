@@ -24,7 +24,7 @@
 									else
 										return date('d-m-Y', strtotime($dateDay));
 								}
-								
+
 								if($day_ku_night == 'Mon'){
 									$Day = "Monday";
 									$dateDay = "next ".$Day;
@@ -35,7 +35,7 @@
 										return date('d-m-Y', strtotime($dateDay));
 									}
 								}
-								
+
 								if($day_ku_night == 'Tue'){
 									$Day = "Tuesday";
 									$dateDay = "next ".$Day;
@@ -46,7 +46,7 @@
 										return date('d-m-Y', strtotime($dateDay));
 									}
 								}
-								
+
 								if($day_ku_night == 'Wed'){
 									$Day = "Wednesday";
 									$dateDay = "next ".$Day;
@@ -57,7 +57,7 @@
 										return date('d-m-Y', strtotime($dateDay));
 									}
 								}
-								
+
 								if($day_ku_night == 'Thu'){
 									$Day = "Thursday";
 									$dateDay = "next ".$Day;
@@ -157,19 +157,19 @@
 							<br>
 							<br>
 
-							<?php if($online == 'Yes'){?> 
-								<?php if(Auth::user()->ban != 1){?> 
+							<?php if($online == 'Yes'){?>
+								<?php if(Auth::user()->ban != 1){?>
 									<form>
-										<td><a href="{{ route('Setcome',$time->id) }}"><button class="ui primary button" >มา</button></a></td>
-										<td><a href="{{ route('Uncome',$time->id) }}"><button class="ui primary button" >ไม่มา</button></a></td>
+										<button class="ui green button" ><a href="{{ route('Setcome',Auth::user()->id) }}" style="color:white;">มา</a></button>
+										<button class="ui red button" ><a href="{{ route('Uncome',Auth::user()->id) }}" style="color:white;">ไม่มา</a></button>
 									</form>
 								<?php };?>
 							<?php };?>
 
 							<div class="inline field">
 						</form>
-						
-					</div>	
+
+					</div>
 				</div>
 			</div>
 		</div>
