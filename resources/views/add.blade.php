@@ -69,7 +69,7 @@
                                           @csrf
 
                                           <div class="form-group row">
-                                              <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                              <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('ชื่อ') }}</label>
 
                                               <div class="col-md-6">
                                                   <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -83,7 +83,7 @@
                                           </div>
                                           <!-- เพิ่ม -->
                                        <div class="form-group row">
-                                              <label for="surmane" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
+                                              <label for="surmane" class="col-md-4 col-form-label text-md-right">{{ __('นามสกุล') }}</label>
 
                                               <div class="col-md-6">
                                                   <input id="surname" type="text" class="form-control{{ $errors->has('sername') ? ' is-invalid' : '' }}" name="surname" value="{{ old('surname') }}" required autofocus>
@@ -97,7 +97,7 @@
                                           </div>
                                           <!-- เพิ่ม -->
                                           <div class="form-group row">
-                                              <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Personal ID') }}</label>
+                                              <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('เลขประชาชน') }}</label>
 
                                               <div class="col-md-6">
                                                   <input id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -112,7 +112,7 @@
 
                                           <!-- เพิ่ม -->
                                        <div class="form-group row">
-                                              <label for="store_name" class="col-md-4 col-form-label text-md-right">{{ __('store_name') }}</label>
+                                              <label for="store_name" class="col-md-4 col-form-label text-md-right">{{ __('ชื่อร้าน') }}</label>
 
                                               <div class="col-md-6">
                                                   <input id="store_name" type="text" class="form-control{{ $errors->has('store_name') ? ' is-invalid' : '' }}" name="store_name" value="{{ old('store_name') }}" required autofocus>
@@ -128,7 +128,7 @@
 
                                           <!-- เพิ่ม -->
                                        <div class="form-group row">
-                                              <label for="lock" class="col-md-4 col-form-label text-md-right">{{ __('lock') }}</label>
+                                              <label for="lock" class="col-md-4 col-form-label text-md-right">{{ __('หมายเลขล็อก') }}</label>
 
                                               <div class="col-md-6">
                                                   <input id="lock" type="text" class="form-control{{ $errors->has('lock') ? ' is-invalid' : '' }}" name="lock" value="{{ old('lock') }}" required autofocus>
@@ -144,7 +144,7 @@
 
                                           <!-- เพิ่ม -->
                                        <div class="form-group row">
-                                              <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('tel') }}</label>
+                                              <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('เบอร์โทรศัพท์') }}</label>
 
                                               <div class="col-md-6">
                                                   <input id="tel" type="text" class="form-control{{ $errors->has('tel') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" required autofocus>
@@ -159,7 +159,7 @@
                                           <!-- เพิ่ม -->
 
                                           <div class="form-group row">
-                                              <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                              <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('รหัสผ่าน') }}</label>
 
                                               <div class="col-md-6">
                                                   <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -173,7 +173,7 @@
                                           </div>
 
                                           <div class="form-group row">
-                                              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('ยืนยันรหัสผ่าน') }}</label>
 
                                               <div class="col-md-6">
                                                   <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
