@@ -12,17 +12,10 @@ class PDFController extends Controller
     public function pdfview()
     {
       $User = User::all();
-      $pdf = PDF::loadView('pdf',['User' => $User]);
-
       $time = Time::all();
       
+      $pdf = PDF::loadView('pdf',['User' => $User],['times' => $time]);
+
       return @$pdf -> stream();
-    }
-    
-    public function pdftime()
-    {
-      $time = Time::all();
-      $User = User::all();
-      return view('pdf', ['User' => $User], ['times' => $time]);
     }
 }
