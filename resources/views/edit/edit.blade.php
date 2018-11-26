@@ -1,5 +1,8 @@
 <html>
-	<head><title>Edit</title><link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet">
+	<head><title>Edit</title>
+        <script src="{{ asset('js/app.js') }}" defer></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   </head>
@@ -9,12 +12,11 @@
 
     <div class="ui segment">
       <form class="ui form">
-        <div class="ui menu">
-					<div class="header item">
+        <div class="ui six item menu">
             <a class="item" href='home'>
             KU SRC Night Market
             </a>
-          </div>
+          
           <a class="item" href='settime'>
             ตั้งเวลา
           </a>
@@ -32,56 +34,49 @@
           </a>
         </div>
         <h3 style="text-align: center">User Info</h3>
-        <div class="ui action input">
-          <input type="text" placeholder="หมายเลขร้าน">
-            <button class="ui button">Search</button>
-        </div>
+        <p>หมายเหตุ สถานะ 1 = มาขาย</p>
         <table class="ui celled table" style="text-align: center">
           <thead>
-            <tr><th width="8%"><center>หมายเลขร้าน</center></th>
-            <th width="18%"><center>ชื่อ</center></th>
-            <th width="18%"><center>นามสกุล</center></th>
-            <th width="10%"><center>เลขบัตรประชาชน</center></th>
-            <th width="22%"><center>ชื่อร้าน</center></th>
-            <th width="8%"><center>เบอร์โทรศัพท์</center></th>
-            <th width="5%"><center>รหัสผ่าน</center></th>
-            <th width="11%"></th>
+            <tr><th width="9%"><center>หมายเลขล็อค</center></th>
+            <th width="17%"><center>ชื่อ</center></th>
+            <th width="17%"><center>นามสกุล</center></th>
+            <th width="11%"><center>เลขบัตรประชาชน</center></th>
+            <th width="20%"><center>ชื่อร้าน</center></th>
+            <th width="9%"><center>เบอร์โทรศัพท์</center></th>
+            <th width="6%"><center>สถานะ</center></th>
+            <th width="11%"><center>Action</center></th>
             </tr></thead>
           <tbody>
+            @foreach($list as $name)
             <tr>
-              <td data-label="หมายเลขร้าน">A00</td>
-              <td data-label="ชื่อ">นายชินดนัย</td>
-              <td data-label="นามสกุล">นิมิตตรา</td>
-              <td data-label="เลขบัตรประชาชน">1100453975758</td>
-              <td data-label="ชื่อร้าน">FigureMoe</td>
-              <td data-label="เบอร์โทรศัพท์">0899999999</td>
-              <td data-label="รหัสผ่าน">15975357</td>
-              <td><center><button class="mini ui button" id=12>
-                    Edit
-                  </button>
-                  <button class="mini ui button">
-                    Delete
-                  </button></center></td>
+              <td>{{ $name['lock']}}</td>
+              <td>{{ $name['name']}}</td>
+              <td>{{ $name['surname']}}</td>
+              <td>{{ $name['email']}}</td>
+              <td>{{ $name['store_name']}}</td>
+              <td>{{ $name['tel']}}</td>
+              <?php if($name->come != 1) {?>
+                 <td><?php echo "ไม่มา";?></td>
+                <?php };?>
+              <?php if($name->come == 1) {?>
+                 <td><?php echo "มา";?></td>
+                <?php };?>
+              <td>
+                <a href = "{{route('edit.edit',$name->id)}}" class = "ui mini button">Edit</a>
+                <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a>
+              </td>
+          
+              
             </tr>
-          <?php
-          for ($i=1; $i < 10; $i++) {
-            echo "<tr class=\"ptr\">";
-            echo "<td>"  .$i. "</td>";
-            echo "<td>" .$i. "</td>";
-            echo "<td>" .$i. "</td>";
-            echo "<td>" .$i. "</td>";
-            echo "<td>" .$i. "</td>";
-            echo "<td>" .$i. "</td>";
-            echo "<td>" .$i. "</td>";
-            echo "<td><center><button class=\"mini ui button\"   id=".$i." data-toggle=\"ui.modal\">Edit</button><input class=\"mini ui button\" type=\"button\" value=\"Delete\" id=".$i."></center></td>";
-            echo "</tr>";
-          }
-          ?>
+            @endforeach
           </tbody>
 
+
         </table>
+
         </form>
-        <div class="ui modal">
+
+<!--         <div class="ui modal">
           <div class="header">Edit Form</div>
             <div class="content">
 
@@ -129,7 +124,7 @@
           <div class="ui approve button">Approve</div>
           <div class="ui cancel button">Cancel</div>
         </div>
-      </div>
+      </div> -->
 
 
 
@@ -137,14 +132,9 @@
 
 
       <script>
-        $(function(){
-         $("#12").click(function(){
-          $(".ui.modal").modal('show');
-          });
-        $(".ui.modal").modal({
-        closable: true
-        });
-        });
+        $('.ui.modal')
+        .modal('attach events', '.test.button', 'show')
+        ;
 
       </script>
 

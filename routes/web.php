@@ -34,9 +34,15 @@ Route::get('add', function(){  //add
     return view('add');
 })->middleware('admin');
 
-Route::get('edit', function(){  //edit
-    return view('edit');
+Route::get('editform', function(){  //add
+    return view('editform');
 })->middleware('admin');
+
+Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview']);
+
+//Route::get('/edit/search', ['as'=>'search','uses' => 'EditPageController@search'])->middleware('admin');
+Route::get('/edit/{id}/del', ['as' => 'del','uses' => 'EditPageController@destroy'])->middleware('admin');
+Route::resource('edit', 'EditPageController')->middleware('admin');
 
 Route::get('/ban',['as'=>'ban','uses'=>'BanController@index'])->middleware('admin'); //ban
 Route::get('/ban/{id}/SetUn',['as'=>'Unban','uses'=>'BanController@SetUnban'])->middleware('admin');
