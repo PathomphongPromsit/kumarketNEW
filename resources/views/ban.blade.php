@@ -115,7 +115,7 @@ body {font-family: Arial;
           <td>{{ $UB['surname']}}</td>
           <td>{{ $UB['store_name']}}</td>
           <td>{{ $UB['tel']}}</td>
-          <td><a href="{{ route('Setban',$UB->id) }}"><button class="ui primary button" >Ban</button></a></td>
+          <td><a href="{{ route('Setban',$UB->id) }}"><button class="ui secondary button" >Ban</button></a></td>
         </tr>
         @endforeach
       </tbody>

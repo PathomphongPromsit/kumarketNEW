@@ -9,11 +9,11 @@ class BanController extends Controller
 {
     public function index()
     {
-      $Ban = User::all()->where('ban',1);
+      $Ban = User::all()->where('ban',1)->where('isAdmin',null);
       $data = array(
         'Ban' => $Ban
       );
-      $UnBan = User::all()->where('ban',null);
+      $UnBan = User::all()->where('ban',null)->where('isAdmin',null);
       $data1 = array(
         'UnBan' => $UnBan
       );
