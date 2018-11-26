@@ -53,14 +53,12 @@
 <div div class="card" style="text-align:center">
     <div style="margin:10px;overflow:auto;">
     <h3>พิมพ์สรุป</h3>
-    <form class="ui form">
       <div class="two fields">
-      <div class="field" >
+      <div class="field" style="text-align:center">
         <td><button style="float: center;width: 90px;height: 40px;font-weight: bold;" onclick="location.href='{{ url('pdf') }}'">
           Print</button></td></div>
         <div class="field" style="text-align:right;"> <button style="float: center;width: 90px;height: 40px;font-weight: bold;" onclick="location.href='{{ url('print/resetcome') }}'">reset</button> </div>
       </div>
-    </form>
      <br>
      @foreach($times as $time)
 						@if($time->day_ku_night == 'Sun')
