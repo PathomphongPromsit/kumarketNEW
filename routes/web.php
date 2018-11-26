@@ -28,6 +28,7 @@ Route::resource('settime', 'TimeController');//settime
 
 Route::get('print','PrintController@userview')->middleware('admin'); //print
 Route::get('pdf','PDFController@pdfview')->middleware('admin');  //pdf
+Route::get('pdf','PDFController@pdftime')->middleware('admin');  //pdf
 
 Route::get('add', function(){  //add
     return view('add');
