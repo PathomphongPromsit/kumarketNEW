@@ -3,25 +3,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <style>
-    @@font-face {
+    @font-face {
         font-family:'THSarabunNew';
         font-style: normal;
         font-weight: normal;
         src:url("{{asset('fonts/THSarabunNew.ttf')}}")format('truetype');
     }
-    @@font-face {
+    @font-face {
         font-family:'THSarabunNew';
         font-style: normal;
         font-weight: bold;
         src:url("{{asset('fonts/THSarabunNew Bold.ttf')}}")format('truetype');
     }
-    @@font-face {
+    @font-face {
         font-family:'THSarabunNew';
         font-style: italic;
         font-weight: normal;
         src:url("{{asset('fonts/THSarabunNew ITalic.ttf')}}")format('truetype');
     }
-    @@font-face {
+    @font-face {
         font-family:'THSarabunNew';
         font-style: italic;
         font-weight: bold;
@@ -36,70 +36,90 @@
     td,th{
         border: 1px solid;
     }
+    ui.celled.table
+      {
+        border-collapse: collapse;
+        width: 100%;
+        height: 50;
+      }
+      .ui.celled.table, .ptd, .pth,.ptr {
+        padding: 5px;
+      }
+      .pth,.ptd {text-align: left;
+        width: 30%;
+        padding: 15px;
+      }
+      .center {text-align: center;
+      }
     </style>
 </head>
 
 <body>
+
+<div div class="card" style="text-align:center">
+    <div style="margin:10px;overflow:auto;">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <h3 align="center">ร้านที่มาขาย</h3>
+    <h3 align="center">
     @foreach($times as $time)
-                        @if($time->day_ku_night == 'Sun')
-                            <br>ประจำวันที่
+        @if($time->day_ku_night == 'Sun')
+            <br>ประจำวันที่
               <?php
               $Day = "Sunday";
               $dateDay = "next ".$Day;
               echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-                        @endif
-                        @if($time->day_ku_night == 'Mon')
-              <br>ประจำวันที่
-              <?php
-              $Day = "Monday";
-              $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
-              ?>
-                        @endif
-                        @if($time->day_ku_night == 'Tue')
+        @endif
+        @if($time->day_ku_night == 'Mon')
+            <br>ประจำวันที่
+            <?php
+            $Day = "Monday";
+            $dateDay = "next ".$Day;
+            echo date('D-d-M-Y', strtotime($dateDay));
+            ?>
+        @endif
+        @if($time->day_ku_night == 'Tue')
               <br>ประจำวันที่
               <?php
               $Day = "Tuesday";
               $dateDay = "next ".$Day;
               echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-                        @endif
-                        @if($time->day_ku_night == 'Wed')
+        @endif
+        @if($time->day_ku_night == 'Wed')
               <br>ประจำวันที่
               <?php
               $Day = "Wednesday";
               $dateDay = "next ".$Day;
               echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-                        @endif
-                        @if($time->day_ku_night == 'Thu')
+        @endif
+        @if($time->day_ku_night == 'Thu')
               <br>ประจำวันที่
               <?php
               $Day = "Thursday";
               $dateDay = "next ".$Day;
               echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-                        @endif
-                        @if($time->day_ku_night == 'Fri')
+        @endif
+        @if($time->day_ku_night == 'Fri')
               <br>ประจำวันที่
               <?php
               $Day = "Friday";
               $dateDay = "next ".$Day;
               echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-                        @endif
-                        @if($time->day_ku_night == 'Sat')
+        @endif
+        @if($time->day_ku_night == 'Sat')
               <br>ประจำวันที่
               <?php
               $Day = "Saturday";
               $dateDay = "next ".$Day;
               echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-                        @endif
+        @endif
       @endforeach
+  </h3>
     <table border="1" width = "100%">
     <thead>
     <tr>
