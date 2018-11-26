@@ -59,11 +59,11 @@
 <div div class="card" style="text-align:center">
     <div style="margin:10px;overflow:auto;">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <h3 align="center">ร้านที่มาขาย</h3>
-    <h3 align="center">
+    <h1 align="center">ร้านที่มาขาย</h1>
+    <h2 align="center">
     @foreach($times as $time)
         @if($time->day_ku_night == 'Sun')
-            <br>ประจำวันที่
+            ประจำวันที่
               <?php
               $Day = "Sunday";
               $dateDay = "next ".$Day;
@@ -71,7 +71,7 @@
               ?>
         @endif
         @if($time->day_ku_night == 'Mon')
-            <br>ประจำวันที่
+            ประจำวันที่
             <?php
             $Day = "Monday";
             $dateDay = "next ".$Day;
@@ -79,7 +79,7 @@
             ?>
         @endif
         @if($time->day_ku_night == 'Tue')
-              <br>ประจำวันที่
+              ประจำวันที่
               <?php
               $Day = "Tuesday";
               $dateDay = "next ".$Day;
@@ -87,7 +87,7 @@
               ?>
         @endif
         @if($time->day_ku_night == 'Wed')
-              <br>ประจำวันที่
+              ประจำวันที่
               <?php
               $Day = "Wednesday";
               $dateDay = "next ".$Day;
@@ -95,7 +95,7 @@
               ?>
         @endif
         @if($time->day_ku_night == 'Thu')
-              <br>ประจำวันที่
+              ประจำวันที่
               <?php
               $Day = "Thursday";
               $dateDay = "next ".$Day;
@@ -103,7 +103,7 @@
               ?>
         @endif
         @if($time->day_ku_night == 'Fri')
-              <br>ประจำวันที่
+              ประจำวันที่
               <?php
               $Day = "Friday";
               $dateDay = "next ".$Day;
@@ -111,7 +111,7 @@
               ?>
         @endif
         @if($time->day_ku_night == 'Sat')
-              <br>ประจำวันที่
+              ประจำวันที่
               <?php
               $Day = "Saturday";
               $dateDay = "next ".$Day;
@@ -119,7 +119,7 @@
               ?>
         @endif
       @endforeach
-  </h3>
+  </h2>
     <table border="1" width = "100%">
     <thead>
     <tr>
