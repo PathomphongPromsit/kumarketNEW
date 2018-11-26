@@ -24,7 +24,7 @@ Route::get('adminview', function(){  //adminview
     return view('adminview');
 })->middleware('admin');
 
-Route::resource('settime', 'TimeController');//settime
+Route::resource('settime', 'TimeController')->middleware('admin');//settime
 
 Route::get('print','PrintController@userview')->middleware('admin'); //print
 Route::get('pdf','PDFController@pdfview')->middleware('admin');  //pdf
@@ -43,9 +43,5 @@ Route::get('/ban/{id}/SetUn',['as'=>'Unban','uses'=>'BanController@SetUnban'])->
 Route::get('/ban/{id}/set',['as'=>'Setban','uses'=>'BanController@Setban'])->middleware('admin');
 
 Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview'])->middleware('auth'); //userpage
-Route::get('/user/{id}/SetUn',['as'=>'Uncome','uses'=>'TimeController@SetUncome'])->middleware('auth'); 
-Route::get('/user/{id}/set',['as'=>'Setcome','uses'=>'TimeController@Setcome'])->middleware('auth'); 
-
-
-
-
+Route::get('/user/{id}/SetUn',['as'=>'Uncome','uses'=>'TimeController@SetUncome'])->middleware('auth');
+Route::get('/user/{id}/set',['as'=>'Setcome','uses'=>'TimeController@Setcome'])->middleware('auth');
