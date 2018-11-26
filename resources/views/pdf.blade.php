@@ -42,6 +42,64 @@
 <body>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <h3 align="center">ร้านที่มาขาย</h3>
+    @foreach($times as $time)
+                        @if($time->day_ku_night == 'Sun')
+                            <br>ประจำวันที่
+              <?php
+              $Day = "Sunday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+                        @endif
+                        @if($time->day_ku_night == 'Mon')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Monday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+                        @endif
+                        @if($time->day_ku_night == 'Tue')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Tuesday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+                        @endif
+                        @if($time->day_ku_night == 'Wed')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Wednesday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+                        @endif
+                        @if($time->day_ku_night == 'Thu')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Thursday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+                        @endif
+                        @if($time->day_ku_night == 'Fri')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Friday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+                        @endif
+                        @if($time->day_ku_night == 'Sat')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Saturday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+                        @endif
+      @endforeach
     <table border="1" width = "100%">
     <thead>
     <tr>
