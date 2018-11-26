@@ -53,6 +53,18 @@
 <div div class="card" style="text-align:center">
     <div style="margin:10px;overflow:auto;">
     <h3>พิมพ์สรุป</h3>
+    <?php
+      function DateTimeDiff($strat,$cuurent,$stop){
+        $n1 = (strtotime($cuurent) - strtotime($strat))/(60*60);
+        $n2 = (strtotime($cuurent) - strtotime($stop))/(60*60);
+        if($n1>0 && $n2<0){
+          echo "in range time";
+        }else{
+          echo "not in range";
+        }
+      }
+    DateTimeDiff("2010-07-28 15:00","2010-07-28 18:30","2010-07-28 19:30")
+    ?>
 <td><button style="float: center;width: 90px;height: 40px;font-weight: bold;" onclick="location.href='{{ url('pdf') }}'">
      Print</button></td>
      <br>
