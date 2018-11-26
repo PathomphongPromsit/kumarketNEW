@@ -55,9 +55,9 @@
     <h3>พิมพ์สรุป</h3>
       <div class="two fields">
       <div class="field" style="text-align:center">
-        <td><button style="float: center;width: 90px;height: 40px;font-weight: bold;" onclick="location.href='{{ url('pdf') }}'">
+        <td><button class="large ui button" onclick="location.href='{{ url('pdf') }}'">
           Print</button></td></div>
-        <div class="field" style="text-align:right;"> <button style="float: center;width: 90px;height: 40px;font-weight: bold;" onclick="location.href='{{ url('print/resetcome') }}'">reset</button> </div>
+        <div class="field" style="text-align:right;"> <button class="large ui red button" onclick="location.href='{{ url('print/resetcome') }}'">ล้างข้อมูลคนมา</button> </div>
       </div>
      <br>
      @foreach($times as $time)
