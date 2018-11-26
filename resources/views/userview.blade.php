@@ -156,6 +156,14 @@
 							<textarea id="announce" name="announce" rows="4" cols="50"  readonly value="{{$time->announce}}" >{{$time->announce}} </textarea>
 							<br>
 							<br>
+							<?php if(Auth::user()->come == 1){?>
+								สถานะปัจจุบัน:  "มา"
+							<?php };?>
+							<?php if(Auth::user()->come != 1){?>
+								สถานะปัจจุบัน:  "ไม่มา"
+							<?php };?>
+							<br>
+							<br>
 
 							<?php if($online == 'Yes'){?>
 								<?php if(Auth::user()->ban != 1){?>
