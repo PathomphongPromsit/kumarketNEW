@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Time;
-
+use App\User;
 class TimeController extends Controller
 {
     /**
@@ -81,7 +81,7 @@ class TimeController extends Controller
             'time_stop'=>'required',
             'announce'=> 'required',
         ]);
-    
+
         $time = Time::find($id);
 
         $time->day_ku_night = $request->get('day_ku_night');
@@ -112,5 +112,22 @@ class TimeController extends Controller
         $times = Time::all();
 
         return view('userview', ['times' => $times]);
+    }
+
+    public function Setcome($id)
+    {
+      $Come = User::find($id);
+      $Come->come = 1;
+      $Come->save();
+
+      return redirect();
+    }
+    public function SetUncome($id)
+    {
+      $Come = User::find($id);
+      $Come->come = null;
+      $Come->save();
+
+      return redirect();
     }
 }
