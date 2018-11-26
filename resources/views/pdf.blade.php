@@ -62,62 +62,83 @@
     <h1 align="center">ร้านที่มาขาย</h1>
     <h2 align="center">
     @foreach($times as $time)
-        @if($time->day_ku_night == 'Sun')
-            ประจำวันที่
+            @if($time->day_ku_night == 'Sun')
+              ประจำวันที่
               <?php
               $Day = "Sunday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Sun')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-        @endif
-        @if($time->day_ku_night == 'Mon')
-            ประจำวันที่
-            <?php
-            $Day = "Monday";
-            $dateDay = "next ".$Day;
-            echo date('D-d-M-Y', strtotime($dateDay));
-            ?>
-        @endif
-        @if($time->day_ku_night == 'Tue')
+            @endif
+            @if($time->day_ku_night == 'Mon')
+              ประจำวันที่
+              <?php
+              $Day = "Monday";
+              $dateDay = "next ".$Day;
+              if(date('D') == 'Mon')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+            @endif
+            @if($time->day_ku_night == 'Tue')
               ประจำวันที่
               <?php
               $Day = "Tuesday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Tue')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-        @endif
-        @if($time->day_ku_night == 'Wed')
+            @endif
+            @if($time->day_ku_night == 'Wed')
               ประจำวันที่
               <?php
               $Day = "Wednesday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Wed')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-        @endif
-        @if($time->day_ku_night == 'Thu')
+            @endif
+            @if($time->day_ku_night == 'Thu')
               ประจำวันที่
               <?php
               $Day = "Thursday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Thu')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-        @endif
-        @if($time->day_ku_night == 'Fri')
+            @endif
+            @if($time->day_ku_night == 'Fri')
               ประจำวันที่
               <?php
               $Day = "Friday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Fri')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-        @endif
-        @if($time->day_ku_night == 'Sat')
+            @endif
+            @if($time->day_ku_night == 'Sat')
               ประจำวันที่
               <?php
               $Day = "Saturday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Sat')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
-        @endif
+            @endif
       @endforeach
   </h2>
     <table border="1" width = "100%">

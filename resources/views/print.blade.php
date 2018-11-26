@@ -62,7 +62,10 @@
               <?php
               $Day = "Sunday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Sun')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
 						@endif
 						@if($time->day_ku_night == 'Mon')
@@ -70,7 +73,10 @@
               <?php
               $Day = "Monday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Mon')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
 						@endif
 						@if($time->day_ku_night == 'Tue')
@@ -78,7 +84,10 @@
               <?php
               $Day = "Tuesday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Tue')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
 						@endif
 						@if($time->day_ku_night == 'Wed')
@@ -86,7 +95,10 @@
               <?php
               $Day = "Wednesday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Wed')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
 						@endif
 						@if($time->day_ku_night == 'Thu')
@@ -94,7 +106,10 @@
               <?php
               $Day = "Thursday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Thu')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
 						@endif
 						@if($time->day_ku_night == 'Fri')
@@ -102,7 +117,10 @@
               <?php
               $Day = "Friday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Fri')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
 						@endif
 						@if($time->day_ku_night == 'Sat')
@@ -110,7 +128,10 @@
               <?php
               $Day = "Saturday";
               $dateDay = "next ".$Day;
-              echo date('D-d-M-Y', strtotime($dateDay));
+              if(date('D') == 'Sat')
+                echo date('D-d-M-Y', strtotime("now"));
+              else
+                echo date('D-d-M-Y', strtotime($dateDay));
               ?>
 						@endif
       @endforeach
