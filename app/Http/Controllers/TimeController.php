@@ -110,8 +110,9 @@ class TimeController extends Controller
     public function userview()
     {
         $times = Time::all();
+        $User = User::all();
 
-        return view('userview', ['times' => $times]);
+        return view('userview', ['times' => $times],['User' => $User]);
     }
 
     public function Setcome($id)

@@ -142,20 +142,25 @@
 							echo $str_open;
 							echo "<br>";
 							echo $str_close;
-							echo "<br>";
 						?>
 						<form class="ui form">
 							<br>
-							<br>ประกาศข่าวสาร<br>
-							
-							
-							<textarea id="announce" name="announce" rows="4" cols="50" readonly value="{{$time->announce}}" >{{$time->announce}} </textarea>
-							
-							<br><br>
-							<form action="">
-								<td><a href="{{ route('Setcome',$time->id) }}"><button class="ui primary button" >มา</button></a></td>
-								<td><a href="{{ route('Uncome',$time->id) }}"><button class="ui primary button" >ไม่มา</button></a></td>
-							</form>
+							ประกาศข่าวสาร
+							<br>
+							<textarea id="announce" name="announce" rows="4" cols="50"  readonly value="{{$time->announce}}" >{{$time->announce}} </textarea>
+							<br>
+							<br>
+							<?php if(auth()->user()->isAdmin == 1){?>
+								<form action="">
+									<td><button class="ui primary button" >TEST</button></td>
+								</form>
+							<?php };?>
+							<?php if(auth()->user()->isAdmin != 1){?>
+								<form action="">
+									<td><a href="{{ route('Setcome',$time->id) }}"><button class="ui primary button" >มา</button></a></td>
+									<td><a href="{{ route('Uncome',$time->id) }}"><button class="ui primary button" >ไม่มา</button></a></td>
+								</form>
+							<?php };?>
 							<div class="inline field">
 						</form>
 						@endforeach
