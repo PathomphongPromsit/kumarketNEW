@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>nae</title>
+  <title>Add</title>
 
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet">
