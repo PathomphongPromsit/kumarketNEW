@@ -56,6 +56,65 @@
 <td><button style="float: center;width: 90px;height: 40px;font-weight: bold;" onclick="location.href='{{ url('pdf') }}'">
      Print</button></td>
      <br>
+     @foreach($times as $time)
+						@if($time->day_ku_night == 'Sun')
+							<br>ประจำวันที่
+              <?php
+              $Day = "Sunday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+						@endif
+						@if($time->day_ku_night == 'Mon')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Monday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+						@endif
+						@if($time->day_ku_night == 'Tue')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Tuesday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+						@endif
+						@if($time->day_ku_night == 'Wed')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Wednesday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+						@endif
+						@if($time->day_ku_night == 'Thu')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Thursday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+						@endif
+						@if($time->day_ku_night == 'Fri')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Friday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+						@endif
+						@if($time->day_ku_night == 'Sat')
+              <br>ประจำวันที่
+              <?php
+              $Day = "Saturday";
+              $dateDay = "next ".$Day;
+              echo date('D-d-M-Y', strtotime($dateDay));
+              ?>
+						@endif
+      @endforeach
+ 
 <table class="ui celled table">
   <thead>
     <th colspan="1" width="10%" >หมายเลขร้าน</th>
