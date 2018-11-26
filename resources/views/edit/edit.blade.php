@@ -12,11 +12,12 @@
 
     <div class="ui segment">
       <form class="ui form">
-        <div class="ui six item menu">
+        <div class="ui menu">
+            <div class="header item">
             <a class="item" href='home'>
-            KU SRC Night Market
+              KU SRC Night Market
             </a>
-          
+          </div>
           <a class="item" href='settime'>
             ตั้งเวลา
           </a>
@@ -34,7 +35,6 @@
           </a>
         </div>
         <h3 style="text-align: center">User Info</h3>
-        <p>หมายเหตุ สถานะ 1 = มาขาย</p>
         <table class="ui celled table" style="text-align: center">
           <thead>
             <tr><th width="9%"><center>หมายเลขล็อค</center></th>
