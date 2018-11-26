@@ -20,11 +20,7 @@ class CreateTimesTable extends Migration
             $table->string('time_start', 255);
             $table->string('day_of_week_stop', 20);
             $table->string('time_stop', 255);
-            $table->string('date_start', 255);
-            $table->string('date_stop', 255);
-            $table->string('date_ku_night', 255);
             $table->string('announce', 1000);
-
             $table->timestamps();
         });
     }

@@ -12,9 +12,6 @@ class Time extends Model
     'time_start',
     'day_of_week_stop',
     'time_stop',
-    'date_start',
-    'date_stop',
-    'date_ku_night',
     'announce'
   ];
 }
