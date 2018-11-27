@@ -59,7 +59,7 @@
           Print</button></td></div>
         <div class="field" style="text-align:right;"> <button class="large ui red button" onclick="location.href='{{ url('print/resetcome') }}'">ล้างข้อมูลคนมา</button> </div>
       </div>
-     <br>
+     <h3>
      @foreach($times as $time)
 						@if($time->day_ku_night == 'Sun')
 							<br>ประจำวันที่
@@ -139,7 +139,7 @@
               ?>
 						@endif
       @endforeach
-
+    </h3>
 <table class="ui celled table">
   <thead>
     <th colspan="1" width="10%" >หมายเลขร้าน</th>

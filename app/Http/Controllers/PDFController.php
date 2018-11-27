@@ -11,7 +11,7 @@ class PDFController extends Controller
 
     public function pdfview()
     {
-      $User = User::all();
+      $User = User::all()->sortBy('lock');;
       $time = Time::all();
       
       $pdf = PDF::loadView('pdf',['User' => $User],['times' => $time]);
