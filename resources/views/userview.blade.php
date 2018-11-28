@@ -101,10 +101,15 @@
 								return $startServerTime;
 							}
 
-							function stopServerTime($stop_day,$stop_date,$stop_time){
+							function stopServerTime($stop_day,$stop_date,$stop_time,$ku_day){
 								$str_last_Day = "last ".$stop_day;
+								if($ku_day ==$stop_day){
+									$str_last_Day = "now";
+								}
 								$date_stop = date('d-m-Y', strtotime($str_last_Day, strtotime($stop_date)));
 								$stopServerTime = $date_stop." ".$stop_time;
+
+								
 								return $stopServerTime;
 							}
 
@@ -132,7 +137,9 @@
 							$start_time = startServerTime($time->day_of_week_start,$market_date,$time->time_start);
 							$str_open = "เวลาเปิดระบบ ".$time->day_of_week_start." ".$start_time;
 							//stop
-							$stop_time = stopServerTime($time->day_of_week_stop,$market_date,$time->time_stop);
+							
+	
+							$stop_time = stopServerTime($time->day_of_week_stop,$market_date,$time->time_stop,$time->day_ku_night);
 							$str_close = "เวลาปิดระบบ ".$time->day_of_week_stop." ".$stop_time;
 							//current
 							$current_time = CurrentTime();
