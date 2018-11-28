@@ -28,6 +28,8 @@ class CreateUsersTable extends Migration
             $table->string('lock')->nullable();                         //เลขล๊อค
             $table->string('ban')->nullable();                          // แบน =1
             $table->string('come')->nullable();                         // มา =1
+            $table->string('count')->nullable();                         // นับการขาด
+
         });
     }
 
