@@ -52,3 +52,8 @@ Route::get('/ban/{id}/set',['as'=>'Setban','uses'=>'BanController@Setban'])->mid
 Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview'])->middleware('auth'); //userpage
 Route::get('/user/{id}/SetUn',['as'=>'Uncome','uses'=>'TimeController@SetUncome'])->middleware('auth');
 Route::get('/user/{id}/set',['as'=>'Setcome','uses'=>'TimeController@Setcome'])->middleware('auth');
+
+Route::get('head', function(){  //add
+    return view('header');
+})->middleware('admin');
+
