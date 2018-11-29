@@ -10,16 +10,14 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">KU SRC MARKET</div>
-                <?php if(auth()->user()->isAdmin == 1){?>
-                <div class="panel-body">
-                <a href="{{url('print')}}"><button>AdminPage</button></a>
-                </div>
-                <?php };?>
-                <?php if(auth()->user()->isAdmin != 1){?>
-                <div class="panel-body">
-                <a href="{{url('userview')}}"><button>UserPage</button></a>
-                </div>
-                <?php };?>
+                <?php
+                if(auth()->user()->isAdmin == 1){
+                    echo '<script type="text/javascript"> window.location = "print"    </script>';
+                }
+                if(auth()->user()->isAdmin != 1){
+                    echo '<script type="text/javascript"> window.location = "userview"    </script>';
+                }
+                ?>
             </div>
         </div>
     </div>
