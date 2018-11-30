@@ -34,7 +34,6 @@ body {font-family: Arial;
   padding: 5px;
 }
 .pth,.ptd {text-align: left;
-  width: 30%;
   padding: 15px;
 }
 .center {text-align: center;
@@ -42,33 +41,86 @@ body {font-family: Arial;
 </style>
 </head>
 <body>
-  <div class="ui segment">
-  <div class="ui menu">
-    <div class="header item">
-      <a class="item" href='home'>
-      KU SRC Night Market
-      </a>
-    </div>
-    <a class="item" href="settime">
-        ตั้งเวลา
-    </a>
-    <a class="item" href="print">
-        พิมพ์รายงาน
-    </a>
-    <a class="item" href="add">
-        เพิ่มรายชื่อ
-    </a>
-    <a class="item" href="edit">
-        แก้ไขรายชื่อ
-    </a>
-    <a class="item" href="ban">
-        รายชื่อผู้ถูกระงับ
-    </a>
+  <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="py-4">
+                <div class="ui menu">
+                    <div class="header item">
+                        <a class="item">
+                            KU SRC Night Market
+                        </a>
+
+                        <a class="item" href="settime">
+                            ตั้งเวลา
+                        </a>
+
+                        <a class="item" href="print">
+                            พิมพ์รายงาน
+                        </a>
+
+                        <a class="item" href="add">
+                            เพิ่มรายชื่อ
+                        </a>
+
+                        <a class="item" href="edit">
+                            แก้ไขรายชื่อ
+                        </a>
+
+                        <a class="item" href="ban">
+                            รายชื่อผู้ถูกระงับ
+                        </a>
+                    </div>
+                </div>
+        </main>
     </div>
 <br>
+<div class="ui segment">
 <div class="segment" id="Ban user">
   <div div class="card" style="text-align:center">
-    <div style="margin:10px;height:50%;overflow:auto;">
+    <div style="margin:10px;">
     <h3>รายชื่อที่ถูกระงับ</h3>
     <br>
     <table class="ui celled table">
@@ -78,6 +130,7 @@ body {font-family: Arial;
         <th class="pth">นามสกุล</th>
         <th class="pth">ชื่อร้าน</th>
         <th class="pth">เบอร์โทร</th>
+        <th class="pth">ไม่มากี่ครั้ง</th>
         <th class="pth"></th>
       </tr></thead>
       <tbody>
@@ -87,6 +140,7 @@ body {font-family: Arial;
           <td>{{ $B['surname']}}</td>
           <td>{{ $B['store_name']}}</td>
           <td>{{ $B['tel']}}</td>
+          <td>{{ $B['count']}}
           <td><a href="{{ route('Unban',$B->id) }}"><button class="ui primary button" >Cancel Ban</button></a></td>
         </tr>
         @endforeach
@@ -97,7 +151,7 @@ body {font-family: Arial;
     <br>
 
   <div div class="card" style="text-align:center">
-    <div style="margin:10px;height:50%;overflow:auto;">
+    <div style="margin:10px">
     <h3 style="text-align: center;">รายชื่อที่ยังไม่ถูกระงับ</h3>
     <table class="ui celled table">
       <thead>
@@ -106,6 +160,7 @@ body {font-family: Arial;
         <th class="pth">นามสกุล</th>
         <th class="pth">ชื่อร้าน</th>
         <th class="pth">เบอร์โทร </th>
+        <th class="pth">ไม่มากี่ครั้ง</th>
         <th class="pth"></th>
       </tr></thead>
       <tbody>
@@ -115,6 +170,7 @@ body {font-family: Arial;
           <td>{{ $UB['surname']}}</td>
           <td>{{ $UB['store_name']}}</td>
           <td>{{ $UB['tel']}}</td>
+          <td>{{ $UB['count']}}
           <td><a href="{{ route('Setban',$UB->id) }}"><button class="ui secondary button" >Ban</button></a></td>
         </tr>
         @endforeach
@@ -124,6 +180,5 @@ body {font-family: Arial;
   </div>
 </div>
 </div>
-
 </body>
 </html>
