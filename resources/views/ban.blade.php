@@ -85,7 +85,7 @@ body {font-family: Arial;
                 </div>
             </div>
         </nav>
-
+<div class="ui segment">
         <main class="py-4">
                 <div class="ui menu">
                     <div class="header item">
@@ -115,9 +115,7 @@ body {font-family: Arial;
                     </div>
                 </div>
         </main>
-    </div>
 <br>
-<div class="ui segment">
 <div class="segment" id="Ban user">
   <div div class="card" style="text-align:center">
     <div style="margin:10px;">
@@ -126,12 +124,12 @@ body {font-family: Arial;
     <table class="ui celled table">
       <thead>
       <tr class="ptr">
-        <th class="pth">ชื่อ</th>
-        <th class="pth">นามสกุล</th>
-        <th class="pth">ชื่อร้าน</th>
-        <th class="pth">เบอร์โทร</th>
-        <th class="pth">ไม่มากี่ครั้ง</th>
-        <th class="pth"></th>
+        <th class="pth" width="20%">ชื่อ</th>
+        <th class="pth" width="20%">นามสกุล</th>
+        <th class="pth"width="20%">ชื่อร้าน</th>
+        <th class="pth" width="20%">เบอร์โทร</th>
+        <th class="pth" width="10%">ไม่มากี่ครั้ง</th>
+        <th class="pth" width="10%"></th>
       </tr></thead>
       <tbody>
         @foreach ($Ban as $B)
@@ -156,12 +154,13 @@ body {font-family: Arial;
     <table class="ui celled table">
       <thead>
       <tr class="ptr">
-        <th class="pth">ชื่อ</th>
-        <th class="pth">นามสกุล</th>
-        <th class="pth">ชื่อร้าน</th>
-        <th class="pth">เบอร์โทร </th>
-        <th class="pth">ไม่มากี่ครั้ง</th>
-        <th class="pth"></th>
+        <th class="pth" width="20%">ชื่อ</th>
+        <th class="pth" width="20%">นามสกุล</th>
+        <th class="pth"width="20%">ชื่อร้าน</th>
+        <th class="pth" width="20%">เบอร์โทร</th>
+        <th class="pth" width="10%">ไม่มากี่ครั้ง</th>
+        <th class="pth" width="10%"></th>
+
       </tr></thead>
       <tbody>
         @foreach ($UnBan as $UB)
