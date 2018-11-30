@@ -15,7 +15,8 @@ class PDFController extends Controller
       $time = Time::all();
       
       $pdf = PDF::loadView('pdf',['User' => $User],['times' => $time]);
+      $pdf->setpaper('A4','landscape');
 
-      return @$pdf -> stream();
+      return @$pdf -> stream('KUMarketStore.pdf');
     }
 }
