@@ -158,7 +158,7 @@
     </thead>
     <tbody>
         @foreach ($User as $u)
-            @if($u->admin != 1)
+            @if($u->isAdmin != 1)
                 @if($u->come == 1)
                     <tr>
                     <td align="center">{{$u['lock']}}</td>
@@ -166,6 +166,19 @@
                     <td>{{$u['name']}}</td>
                     <td>{{$u['surname']}}</td>
                     <td>{{$u['tel']}}</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    </tr>
+                @else
+                    <tr>
+                    <td align="center">{{$u['lock']}}</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
                     <td> </td>
                     <td> </td>
                     <td> </td>
