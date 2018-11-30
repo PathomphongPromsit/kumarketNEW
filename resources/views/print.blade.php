@@ -219,6 +219,7 @@
   <tbody>
         @foreach ($User as $u)
           @if($u->admin != 1)
+           @if($u->ban != 1)
             @if($u->come == 1)
               <tr>
               <td >{{$u['lock']}}</td>
@@ -228,6 +229,7 @@
               <td>{{$u['tel']}}</td>
               </tr>
             @endif
+           @endif
           @endif
         @endforeach
     </tbody>
