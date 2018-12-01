@@ -19,7 +19,7 @@
         font-family:'THSarabunNew';
         font-style: italic;
         font-weight: normal;
-        src:url("{{asset('fonts/THSarabunNew ITalic.ttf')}}")format('truetype');
+        src:url("{{asset('fonts/THSarabunNew Italic.ttf')}}")format('truetype');
     }
     @font-face {
         font-family:'THSarabunNew';
