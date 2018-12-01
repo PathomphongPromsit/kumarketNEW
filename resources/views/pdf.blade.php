@@ -145,12 +145,12 @@
     <thead>
     <tr>
         <th align="center" width="5%">หมายเลขร้าน</th>
-        <th align="center" >ชื่อร้าน</th>
         <th align="center" >ชื่อ</th>
         <th align="center" >นามสกุล</th>
-        <th align="center" >เบอร์โทรศัพท์</th>
         <th align="center" >ใช้ไฟ</th>
         <th align="center" >ขาจร</th>
+        <th align="center" >ชื่อร้าน</th>
+        <th align="center" >เบอร์โทรศัพท์</th>
         <th align="center" >เลขเล่ม</th>
         <th align="center" >จำนวนเงิน</th>
         <th align="center" >หมายเหตุ</th>
@@ -163,12 +163,12 @@
                 @if($u->come == 1)
                     <tr>
                     <td align="center">{{$u['lock']}}</td>
-                    <td>{{$u['store_name']}}</td>
                     <td>{{$u['name']}}</td>
                     <td>{{$u['surname']}}</td>
+                    <td> </td>
+                    <td> </td>
+                    <td>{{$u['store_name']}}</td>
                     <td>{{$u['tel']}}</td>
-                    <td> </td>
-                    <td> </td>
                     <td> </td>
                     <td> </td>
                     <td> </td>
