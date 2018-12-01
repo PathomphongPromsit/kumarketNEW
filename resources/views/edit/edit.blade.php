@@ -63,7 +63,7 @@
 
 
 
-        <h3 style="text-align: center">User Info</h3>
+        <h3 style="text-align: center">ข้อมูลผู้ใช้งาน</h3>
         <table class="ui celled table" style="text-align: center">
           <thead>
             <tr><th width="9%"><center>หมายเลขล็อค</center></th>

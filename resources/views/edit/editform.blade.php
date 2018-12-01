@@ -9,6 +9,7 @@
 	<body>
 		<div class="ui clearing segment">
 			<img width="100%" src="<?php echo asset('img/02.gif'); ?>">
+			
 			<h3 style="text-align: center">Edit Form</h3>
 			<div div class="card">
 			<form class="ui form" style="margin: 2em;" method="post" action="{{ route('edit.update', $list->id) }}">
