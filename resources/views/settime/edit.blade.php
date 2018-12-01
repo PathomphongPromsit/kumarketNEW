@@ -81,7 +81,7 @@
 
         <div class="form-group">
           <label for="announce">ประกาศ</label>
-          <input type="text" class="form-control" name="announce" value={{ $time->announce }} />
+          <input type="text" class="form-control" name="announce" value="{{ $time->announce }}" />
         </div>
         <td><a href="{{ route('settime.index')}}" class="ui blue button">กลับ</a></td>
         <button type="submit" class="ui green button">บันทึก</button>

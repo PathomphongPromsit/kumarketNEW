@@ -15,7 +15,7 @@
 			        @method('PATCH')
         			@csrf	
 	                <div class="field">
-	                  <label>Name</label>
+	                  <label>ชื่อ-นามสกุล</label>
 	                  <div class="two fields">
 	                    <div class="field">
 	                      <input type="text" class="form-control" name="name" placeholder="First Name" value="{{ $list->name }}" />
@@ -27,7 +27,7 @@
 	                </div>
 
 	                <div class="field">
-	                  <label>Personal Info</label>
+	                  <label>บัตรประชาชน-เบอร์โทรศัพท์</label>
 	                  <div class="two fields">
 	                    <div class="field">
 	                      <input type="text" class="form-control" name="email" placeholder="Personal ID" value="{{ $list->email }}" />
@@ -39,13 +39,13 @@
 	                </div>
 
 	                <div class="field">
-	                  <label>Shop Info</label>
+	                  <label>ชื่อร้านค้า-เลขล็อค</label>
 	                  <div class="two fields">
 	                    <div class="field">
 	                      <input type="text" class="form-control" name="store_name" placeholder="Store Name" value="{{ $list->store_name}}" />
 	                    </div>
 	                    <div class="field">
-	                      <input type="text" class="form-control" name="lock" placeholder="Shop Zone Number" value="{{ $list->lock }}"" />
+	                      <input type="text" class="form-control" name="lock" placeholder="Shop Zone Number" value="{{ $list->lock }}" />
 	                    </div>
 	                  </div>
 	                </div>
@@ -59,7 +59,7 @@
             				
             			</div>
             			</div>
-					<label for="come">สถานะ</label>
+					<label for="come">สถานะยืนยัน</label>
             		<div class="field">
 						<select name="come" style="width:30%">
           							<option value = "{{$list->come}}" selected="selected">{{$list->come}}</option>
@@ -67,6 +67,7 @@
                 					<option value = " ">ไม่มา</option>
             					</select>
 	                    </div>
+	                
             		
         		
 

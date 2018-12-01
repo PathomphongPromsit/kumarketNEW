@@ -67,13 +67,14 @@
         <table class="ui celled table" style="text-align: center">
           <thead>
             <tr><th width="9%"><center>หมายเลขล็อค</center></th>
-            <th width="15%"><center>ชื่อ</center></th>
-            <th width="15%"><center>นามสกุล</center></th>
+            <th width="11%"><center>ชื่อ</center></th>
+            <th width="11%"><center>นามสกุล</center></th>
             <th width="11%"><center>เลขบัตรประชาชน</center></th>
-            <th width="19%"><center>ชื่อร้าน</center></th>
+            <th width="18%"><center>ชื่อร้าน</center></th>
             <th width="9%"><center>เบอร์โทรศัพท์</center></th>
             <th width="5%"><center>ยืนยัน</center></th>
             <th width="6%"><center>ขาด/ครั้ง</center></th>
+            <th width="9%"><center>สถานะ</center></th>
             <th width="11%"><center>Action</center></th>
             </tr></thead>
           <tbody>
@@ -91,7 +92,16 @@
               <?php if($name->come == 1) {?>
                  <td><?php echo "มา";?></td>
                 <?php };?>
+
               <td>{{ $name['count']}}</td>
+
+              <?php if($name->ban != 1) {?>
+                 <td><?php echo "";?></td>
+                <?php };?>
+              <?php if($name->ban == 1) {?>
+                 <td><?php echo "ถูกระงับการใช้งาน";?></td>
+                <?php };?>
+
               <td>
                 <a href = "{{route('edit.edit',$name->id)}}" class = "ui mini button">Edit</a>
                 <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a>

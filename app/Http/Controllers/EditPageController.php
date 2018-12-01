@@ -99,6 +99,7 @@ class EditPageController extends Controller
         $list->lock = $request->get('lock');
         $list->come = $request->get('come');
         $list->count = $request->get('count');
+        $list->ban = $request->get('ban');
 
         $list->save();
         return redirect('edit'); //->with('success', 'Stock has been updated'); 
