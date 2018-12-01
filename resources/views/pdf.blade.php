@@ -64,7 +64,7 @@
 <div div class="card" style="text-align:center">
     <div style="margin:10px;overflow:auto;">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <h1 align="center">ร้านที่มาขาย</h1>
+    <h1 align="center">ร้านที่มาขาย HELLO</h1>
     <h2 align="center">
     @foreach($times as $time)
             @if($time->day_ku_night == 'Sun')
