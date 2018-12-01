@@ -41,21 +41,30 @@ body {font-family: Arial;
 </style>
 </head>
 <body>
-  <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        
+<div class="ui segment">
+        <main class="py-4">
+                <div class="ui green inverted huge menu">
+            <div class="header item">
+              KU SRC Night Market
+          </div>
+          <a class="item" href='settime'>
+            ตั้งเวลา
+          </a>
+          <a class="item" href='print'>
+            พิมพ์รายงาน
+          </a>
+          <a class="item" href='add'>
+            เพิ่มรายชื่อ
+          </a>
+          <a class="item" href='edit'>
+            แก้ไขรายชื่อ
+          </a>
+          <a class="item" href='ban'>
+            รายชื่อผู้ถูกระงับ
+          </a>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -63,16 +72,17 @@ body {font-family: Arial;
                             </li>
 
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li>
+                                
+
+                                <div class="ui item" aria-labelledby="navbarDropdown">
+                                     <a>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a class="ui green button href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('ออกจากระบบ') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -82,38 +92,6 @@ body {font-family: Arial;
                             </li>
                         @endguest
                     </ul>
-                </div>
-            </div>
-        </nav>
-<div class="ui segment">
-        <main class="py-4">
-                <div class="ui menu">
-                    <div class="header item">
-                        <a class="item">
-                            KU SRC Night Market
-                        </a>
-
-                        <a class="item" href="settime">
-                            ตั้งเวลา
-                        </a>
-
-                        <a class="item" href="print">
-                            พิมพ์รายงาน
-                        </a>
-
-                        <a class="item" href="add">
-                            เพิ่มรายชื่อ
-                        </a>
-
-                        <a class="item" href="edit">
-                            แก้ไขรายชื่อ
-                        </a>
-
-                        <a class="item" href="ban">
-                            รายชื่อผู้ถูกระงับ
-                        </a>
-                    </div>
-                </div>
         </main>
 <br>
 <div class="segment" id="Ban user">
@@ -121,14 +99,14 @@ body {font-family: Arial;
     <div style="margin:10px;">
     <h3>รายชื่อที่ถูกระงับ</h3>
     <br>
-    <table class="ui celled table">
+    <table class="ui celled table" style="text-align: center">
       <thead>
       <tr class="ptr">
         <th class="pth" width="20%">ชื่อ</th>
         <th class="pth" width="20%">นามสกุล</th>
         <th class="pth"width="20%">ชื่อร้าน</th>
         <th class="pth" width="20%">เบอร์โทร</th>
-        <th class="pth" width="10%">ไม่มากี่ครั้ง</th>
+        <th class="pth" width="10%">ขาด/ครั้ง</th>
         <th class="pth" width="10%"></th>
       </tr></thead>
       <tbody>
@@ -139,7 +117,7 @@ body {font-family: Arial;
           <td>{{ $B['store_name']}}</td>
           <td>{{ $B['tel']}}</td>
           <td>{{ $B['count']}}
-          <td><a href="{{ route('Unban',$B->id) }}"><button class="ui primary button" >Cancel Ban</button></a></td>
+          <td><a href="{{ route('Unban',$B->id) }}"><button class="ui primary button">Cancel Ban</button></a></td>
         </tr>
         @endforeach
       </tbody>
@@ -151,14 +129,14 @@ body {font-family: Arial;
   <div div class="card" style="text-align:center">
     <div style="margin:10px">
     <h3 style="text-align: center;">รายชื่อที่ยังไม่ถูกระงับ</h3>
-    <table class="ui celled table">
+    <table class="ui celled table" style="text-align: center">
       <thead>
       <tr class="ptr">
         <th class="pth" width="20%">ชื่อ</th>
         <th class="pth" width="20%">นามสกุล</th>
         <th class="pth"width="20%">ชื่อร้าน</th>
         <th class="pth" width="20%">เบอร์โทร</th>
-        <th class="pth" width="10%">ไม่มากี่ครั้ง</th>
+        <th class="pth" width="10%">ขาด/ครั้ง</th>
         <th class="pth" width="10%"></th>
 
       </tr></thead>
@@ -170,7 +148,7 @@ body {font-family: Arial;
           <td>{{ $UB['store_name']}}</td>
           <td>{{ $UB['tel']}}</td>
           <td>{{ $UB['count']}}
-          <td><a href="{{ route('Setban',$UB->id) }}"><button class="ui secondary button" >Ban</button></a></td>
+          <td><a href="{{ route('Setban',$UB->id) }}"><button class="ui secondary button">Ban</button></a></td>
         </tr>
         @endforeach
       </tbody>

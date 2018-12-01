@@ -9,12 +9,16 @@
 
 </head>
 <body>
+
+    
+
   <div class="ui segment">
-    <div class="ui menu">
-          <div class="header item">
-            <a class="item" href='home'>
-            KU SRC Night Market
-            </a>
+
+    <main class="py-4">
+          
+                <div class="ui green inverted huge menu">
+            <div class="header item">
+              KU SRC Night Market
           </div>
           <a class="item" href='settime'>
             ตั้งเวลา
@@ -31,7 +35,38 @@
           <a class="item" href='ban'>
             รายชื่อผู้ถูกระงับ
           </a>
-        </div>
+
+          <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+
+                        @else
+                            <li>
+                                
+
+                                <div class="ui item" aria-labelledby="navbarDropdown">
+                                     <a>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+                                <a class="ui green button href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('ออกจากระบบ') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+            </div>
+        </main>
+
 
         <!DOCTYPE html>
         <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">

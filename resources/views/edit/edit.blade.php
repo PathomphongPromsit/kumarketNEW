@@ -1,22 +1,19 @@
 <html>
 	<head><title>Edit</title>
+     <title>{{ config('app.name', 'Laravel') }}</title>
         <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   </head>
-  <style>
-  </style>
 	<body>
 
     <div class="ui segment">
-      <form class="ui form">
-        <div class="ui menu">
+        <main class="py-4">
+        <div class="ui green inverted huge menu">
             <div class="header item">
-            <a class="item" href='home'>
               KU SRC Night Market
-            </a>
           </div>
           <a class="item" href='settime'>
             ตั้งเวลา
@@ -33,17 +30,49 @@
           <a class="item" href='ban'>
             รายชื่อผู้ถูกระงับ
           </a>
-        </div>
+          <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+
+                        @else
+                            <li>
+                                
+
+                                <div class="ui item" aria-labelledby="navbarDropdown">
+                                     <a>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+                                <a class="ui green button href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('ออกจากระบบ') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+        </div></main>
+
+
+
         <h3 style="text-align: center">User Info</h3>
         <table class="ui celled table" style="text-align: center">
           <thead>
             <tr><th width="9%"><center>หมายเลขล็อค</center></th>
-            <th width="17%"><center>ชื่อ</center></th>
-            <th width="17%"><center>นามสกุล</center></th>
+            <th width="15%"><center>ชื่อ</center></th>
+            <th width="15%"><center>นามสกุล</center></th>
             <th width="11%"><center>เลขบัตรประชาชน</center></th>
-            <th width="20%"><center>ชื่อร้าน</center></th>
+            <th width="19%"><center>ชื่อร้าน</center></th>
             <th width="9%"><center>เบอร์โทรศัพท์</center></th>
-            <th width="6%"><center>สถานะ</center></th>
+            <th width="5%"><center>ยืนยัน</center></th>
+            <th width="6%"><center>ขาด/ครั้ง</center></th>
             <th width="11%"><center>Action</center></th>
             </tr></thead>
           <tbody>
@@ -61,6 +90,7 @@
               <?php if($name->come == 1) {?>
                  <td><?php echo "มา";?></td>
                 <?php };?>
+              <td>{{ $name['count']}}</td>
               <td>
                 <a href = "{{route('edit.edit',$name->id)}}" class = "ui mini button">Edit</a>
                 <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a>
@@ -74,7 +104,6 @@
 
         </table>
 
-        </form>
 
 <!--         <div class="ui modal">
           <div class="header">Edit Form</div>
@@ -124,7 +153,7 @@
           <div class="ui approve button">Approve</div>
           <div class="ui cancel button">Cancel</div>
         </div>
-      </div> -->
+      </div> 
 
 
 
@@ -136,7 +165,7 @@
         .modal('attach events', '.test.button', 'show')
         ;
 
-      </script>
+      </script>-->
 
 
 
