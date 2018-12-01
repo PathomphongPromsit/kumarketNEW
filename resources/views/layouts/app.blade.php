@@ -19,6 +19,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <img src="<?php echo asset('img/02.gif'); ?>">
 </head>
 <body>
     <div id="app">
