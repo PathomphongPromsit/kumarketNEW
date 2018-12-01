@@ -152,6 +152,13 @@
 							echo "<br>";
 							echo $str_close;
 							echo "<br>";
+							$N = Auth::user()->name;
+							$SR = Auth::user()->surname;
+							echo "<br>";
+							echo "ยินดีต้อนรับ คุณ ".$N." ".$SR;
+							echo "<br>";
+							echo "*หากต้องการเปลี่ยนผู้ใช้กรุณาออกจากระบบ*"
+
 							//echo $online;
 
 						?>
