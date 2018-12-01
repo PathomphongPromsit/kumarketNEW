@@ -8,28 +8,7 @@
   </head>
 	<body>
 		<div class="ui clearing segment">
-			<div class="ui menu">
-            <div class="header item">
-            <a class="item" href='home'>
-              KU SRC Night Market
-            </a>
-          </div>
-          <a class="item" href='settime'>
-            ตั้งเวลา
-          </a>
-          <a class="item" href='print'>
-            พิมพ์รายงาน
-          </a>
-          <a class="item" href='add'>
-            เพิ่มรายชื่อ
-          </a>
-          <a class="item" href='edit'>
-            แก้ไขรายชื่อ
-          </a>
-          <a class="item" href='ban'>
-            รายชื่อผู้ถูกระงับ
-          </a>
-        </div>
+			<img width="100%" src="<?php echo asset('img/02.gif'); ?>">
 			<h3 style="text-align: center">Edit Form</h3>
 			<div div class="card">
 			<form class="ui form" style="margin: 2em;" method="post" action="{{ route('edit.update', $list->id) }}">

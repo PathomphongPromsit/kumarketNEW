@@ -13,6 +13,7 @@
     
 
   <div class="ui segment">
+    <img width="100%" src="<?php echo asset('img/02.gif'); ?>">
 
     <main class="py-4">
           
@@ -51,7 +52,7 @@
                                      <a>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-                                <a class="ui green button href="{{ route('logout') }}"
+                                <a class="ui green button" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('ออกจากระบบ') }}

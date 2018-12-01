@@ -43,8 +43,9 @@ body {font-family: Arial;
 <body>
         
 <div class="ui segment">
+  <img width="100%" src="<?php echo asset('img/02.gif'); ?>">
         <main class="py-4">
-                <div class="ui green inverted huge menu">
+            <div class="ui green inverted huge menu">
             <div class="header item">
               KU SRC Night Market
           </div>
@@ -79,7 +80,7 @@ body {font-family: Arial;
                                      <a>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-                                <a class="ui green button href="{{ route('logout') }}"
+                                <a class="ui green button" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('ออกจากระบบ') }}
