@@ -103,8 +103,11 @@
     <h3>พิมพ์สรุป</h3>
       <div class="two fields">
       <div class="field" style="text-align:center">
-        <td><button class="large ui button" onclick="location.href='{{ url('pdf') }}'">
-          Print</button></td></div>
+        <td>
+          <!-- <button class="large ui button" onclick="location.href='{{ url('pdf') }}'">Print</button> -->
+          <button class="large ui button" onclick="window.open('pdf')">Print</button>
+        </td>
+      </div>
         <div class="field" style="text-align:right;"> <button class="large ui red button" onclick="location.href='{{ url('print/resetcome') }}'">ล้างข้อมูลคนมา</button> </div>
       </div>
      <h3>
@@ -217,3 +220,4 @@
  </div>
   </body>
 </html>
+
