@@ -33,11 +33,9 @@
     }
     table{
         border-collapse: collapse;
-        font-family: "THSarabunNew";
     }
     td,th{
         border: 1px solid;
-        font-family: "THSarabunNew";
     }
     ui.celled.table
       {
