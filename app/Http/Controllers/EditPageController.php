@@ -87,6 +87,7 @@ class EditPageController extends Controller
             'tel'=> 'required',
             'store_name'=>'required',
             'lock'=>'required',
+            'count'=>'required|integer',
         ]);
     
         $list = User::find($id);
