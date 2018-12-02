@@ -14,7 +14,7 @@ class EditPageController extends Controller
     public function index()
     {
         //
-        $list = User::all()->where('isAdmin',null)->sortBy('lock');
+        $list = User::all()->where('isAdmin',null)->sortBy('lock', SORT_NATURAL|SORT_FLAG_CASE);
         $data = array(
             'list' => $list
         );

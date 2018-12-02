@@ -16,36 +16,42 @@
 			        @method('PATCH')
         			@csrf	
 	                <div class="field">
-	                  <label>ชื่อ-นามสกุล</label>
+	                  <!-- <label>ชื่อ-นามสกุล</label> -->
 	                  <div class="two fields">
 	                    <div class="field">
+	                    	<label>ชื่อ</label>
 	                      <input type="text" class="form-control" name="name" placeholder="First Name" value="{{ $list->name }}" />
 	                    </div>
 	                    <div class="field">
+	                    	<label>นามสกุล</label>
 	                      <input type="text" class="form-control" name="surname" placeholder="Last Name" value="{{ $list->surname }}" />
 	                    </div>
 	                  </div>
 	                </div>
 
 	                <div class="field">
-	                  <label>บัตรประชาชน-เบอร์โทรศัพท์</label>
+	                  <!-- <label>บัตรประชาชน-เบอร์โทรศัพท์</label> -->
 	                  <div class="two fields">
 	                    <div class="field">
+	                    	<label>บัตรประชาชน</label>
 	                      <input type="text" class="form-control" name="email" placeholder="Personal ID" value="{{ $list->email }}" />
 	                    </div>
 	                    <div class="field">
+	                    	<label>เบอร์โทรศัพท์</label>
 	                      <input type="text" class="form-control" name="tel" placeholder="Telephone" value="{{ $list->tel }}" />
 	                    </div>
 	                  </div>
 	                </div>
 
 	                <div class="field">
-	                  <label>ชื่อร้านค้า-เลขล็อค</label>
+	                  <!-- <label>ชื่อร้านค้า-เลขล็อค</label> -->
 	                  <div class="two fields">
 	                    <div class="field">
+	                    	<label>ชื่อร้านค้า</label>
 	                      <input type="text" class="form-control" name="store_name" placeholder="Store Name" value="{{ $list->store_name}}" />
 	                    </div>
 	                    <div class="field">
+	                    	<label>เลขล็อค</label>
 	                      <input type="text" class="form-control" name="lock" placeholder="Shop Zone Number" value="{{ $list->lock }}" />
 	                    </div>
 	                  </div>
