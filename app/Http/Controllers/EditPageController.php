@@ -120,4 +120,22 @@ class EditPageController extends Controller
         return redirect('edit');
         
     }
+
+    public function MOS()  //by number
+    {
+        $list = User::all()->where('isAdmin',null)->sortBy(function ($product, $key) {
+            return strlen($product['lock']);
+        });
+        return view('testSort', ['User' => $list]);
+    }
+
+    public function MOSs() //by char and number 
+    {
+        $list = User::all()->where('isAdmin',null)->sortBy('lock', SORT_NATURAL|SORT_FLAG_CASE);
+        return view('testSort', ['User' => $list]);
+    }
+
+
+    
+    
 }
