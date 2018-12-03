@@ -9,11 +9,11 @@ class BanController extends Controller
 {
     public function index()
     {
-      $Ban = User::all()->where('ban',1)->where('isAdmin',null)->sortBy('lock');
+      $Ban = User::all()->where('ban',1)->where('isAdmin',null)->sortBy('lock', SORT_NATURAL|SORT_FLAG_CASE);
       $data = array(
         'Ban' => $Ban
       );
-      $UnBan = User::all()->where('ban',null)->where('isAdmin',null)->sortBy('lock');
+      $UnBan = User::all()->where('ban',null)->where('isAdmin',null)->sortBy('lock', SORT_NATURAL|SORT_FLAG_CASE);
       $data1 = array(
         'UnBan' => $UnBan
       );

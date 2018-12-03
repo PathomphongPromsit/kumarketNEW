@@ -24,18 +24,6 @@
 body {font-family: Arial;
   background-color: #ffffff;
 }
-.ui.celled.table
-{
-  border-collapse: collapse;
-  width: 100%;
-  height: 50;
-}
-.ui.celled.table, .ptd, .pth,.ptr {
-  padding: 5px;
-}
-.pth,.ptd {text-align: left;
-  padding: 15px;
-}
 .center {text-align: center;
 }
 </style>
@@ -102,17 +90,19 @@ body {font-family: Arial;
     <br>
     <table class="ui celled table" style="text-align: center">
       <thead>
-      <tr class="ptr">
-        <th class="pth" width="20%">ชื่อ</th>
-        <th class="pth" width="20%">นามสกุล</th>
-        <th class="pth"width="20%">ชื่อร้าน</th>
-        <th class="pth" width="20%">เบอร์โทร</th>
-        <th class="pth" width="10%">ขาด/ครั้ง</th>
-        <th class="pth" width="10%"></th>
+      <tr >
+        <th width="10%"><center>หมายเลขล็อค</center></th>
+        <th width="17.5%">ชื่อ</th>
+        <th width="17.5%">นามสกุล</th>
+        <th width="17.5%">ชื่อร้าน</th>
+        <th width="17.5%">เบอร์โทร</th>
+        <th width="10%">ขาด/ครั้ง</th>
+        <th width="10%"></th>
       </tr></thead>
       <tbody>
         @foreach ($Ban as $B)
         <tr>
+          <td>{{ $B['lock']}}</td>
           <td>{{ $B['name']}}</td>
           <td>{{ $B['surname']}}</td>
           <td>{{ $B['store_name']}}</td>
@@ -132,18 +122,19 @@ body {font-family: Arial;
     <h3 style="text-align: center;">รายชื่อที่ยังไม่ถูกระงับ</h3>
     <table class="ui celled table" style="text-align: center">
       <thead>
-      <tr class="ptr">
-        <th class="pth" width="20%">ชื่อ</th>
-        <th class="pth" width="20%">นามสกุล</th>
-        <th class="pth"width="20%">ชื่อร้าน</th>
-        <th class="pth" width="20%">เบอร์โทร</th>
-        <th class="pth" width="10%">ขาด/ครั้ง</th>
-        <th class="pth" width="10%"></th>
-
+      <tr>
+        <th width="10%"><center>หมายเลขล็อค</center></th>
+        <th width="17.5%">ชื่อ</th>
+        <th width="17.5%">นามสกุล</th>
+        <th width="17.5%">ชื่อร้าน</th>
+        <th width="17.5%">เบอร์โทร</th>
+        <th width="10%">ขาด/ครั้ง</th>
+        <th width="10%"></th>
       </tr></thead>
       <tbody>
         @foreach ($UnBan as $UB)
         <tr>
+          <td>{{ $UB['lock']}}</td>
           <td>{{ $UB['name']}}</td>
           <td>{{ $UB['surname']}}</td>
           <td>{{ $UB['store_name']}}</td>
