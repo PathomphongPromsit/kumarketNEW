@@ -37,4 +37,27 @@ class BanController extends Controller
 
       return redirect('ban');
     }
+    public function search(Request $request)
+    {
+      $searchData = $request->searchData;
+      $Ban = DB::table('users')
+      ->where('ban',1)
+      ->where('lock','like','%'.$searchData.'%')
+      ->where('isAdmin',null)
+      ->orderBy('lock', SORT_NATURAL|SORT_FLAG_CASE)
+      ->get();
+      $data2 = array(
+        'Ban' => $Ban
+      );
+      $UnBan = DB::table('users')
+      ->where('ban',null)
+      ->where('lock','like','%'.$searchData.'%')
+      ->where('isAdmin',null)
+      ->orderBy('lock', SORT_NATURAL|SORT_FLAG_CASE)
+      ->get();
+      $data3 = array(
+        'UnBan' => $UnBan
+      );
+      return view('ban',$data2,$data3);
+    }
 }

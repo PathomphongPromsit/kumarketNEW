@@ -29,7 +29,7 @@ body {font-family: Arial;
 </style>
 </head>
 <body>
-        
+
 <div class="ui segment">
   <img width="100%" src="<?php echo asset('img/02.gif'); ?>">
         <main class="py-4">
@@ -61,7 +61,7 @@ body {font-family: Arial;
 
                         @else
                             <li>
-                                
+
 
                                 <div class="ui item" aria-labelledby="navbarDropdown">
                                     <a>
@@ -83,6 +83,13 @@ body {font-family: Arial;
         </div>
         </main>
 <br>
+<div style="text-align:right">
+<form action="{{ route('Bsearch')}}">
+  <input type="text" name="searchData" placeholder="ค้นหาตามเลขล็อค">
+  <button type="submit">search</button>
+</form>
+</div>
+<br>
 <div class="segment" id="Ban user">
   <div div class="card" style="text-align:center">
     <div style="margin:10px;">
@@ -102,12 +109,12 @@ body {font-family: Arial;
       <tbody>
         @foreach ($Ban as $B)
         <tr>
-          <td>{{ $B['lock']}}</td>
-          <td>{{ $B['name']}}</td>
-          <td>{{ $B['surname']}}</td>
-          <td>{{ $B['store_name']}}</td>
-          <td>{{ $B['tel']}}</td>
-          <td>{{ $B['count']}}
+          <td>{{ $B->lock}}</td>
+          <td>{{ $B->name}}</td>
+          <td>{{ $B->surname}}</td>
+          <td>{{ $B->store_name}}</td>
+          <td>{{ $B->tel}}</td>
+          <td>{{ $B->count}}</td>
           <td><a href="{{ route('Unban',$B->id) }}"><button class="ui primary button">Cancel Ban</button></a></td>
         </tr>
         @endforeach
@@ -116,7 +123,6 @@ body {font-family: Arial;
      </div>
     </div>
     <br>
-
   <div div class="card" style="text-align:center">
     <div style="margin:10px">
     <h3 style="text-align: center;">รายชื่อที่ยังไม่ถูกระงับ</h3>
@@ -134,12 +140,12 @@ body {font-family: Arial;
       <tbody>
         @foreach ($UnBan as $UB)
         <tr>
-          <td>{{ $UB['lock']}}</td>
-          <td>{{ $UB['name']}}</td>
-          <td>{{ $UB['surname']}}</td>
-          <td>{{ $UB['store_name']}}</td>
-          <td>{{ $UB['tel']}}</td>
-          <td>{{ $UB['count']}}
+          <td>{{ $UB->lock}}</td>
+          <td>{{ $UB->name}}</td>
+          <td>{{ $UB->surname}}</td>
+          <td>{{ $UB->store_name}}</td>
+          <td>{{ $UB->tel}}</td>
+          <td>{{ $UB->count}}</td>
           <td><a href="{{ route('Setban',$UB->id) }}"><button class="ui secondary button">Ban</button></a></td>
         </tr>
         @endforeach

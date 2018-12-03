@@ -48,6 +48,7 @@ Route::resource('edit', 'EditPageController')->middleware('admin');
 Route::get('/ban',['as'=>'ban','uses'=>'BanController@index'])->middleware('admin'); //ban
 Route::get('/ban/{id}/SetUn',['as'=>'Unban','uses'=>'BanController@SetUnban'])->middleware('admin');
 Route::get('/ban/{id}/set',['as'=>'Setban','uses'=>'BanController@Setban'])->middleware('admin');
+Route::get('/ban/search',['as'=>'Bsearch','uses'=>'BanController@search'])->middleware('admin');
 
 Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview'])->middleware('auth'); //userpage
 Route::get('/user/{id}/SetUn',['as'=>'Uncome','uses'=>'TimeController@SetUncome'])->middleware('auth');
