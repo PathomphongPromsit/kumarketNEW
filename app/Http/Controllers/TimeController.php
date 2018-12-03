@@ -117,18 +117,24 @@ class TimeController extends Controller
 
     public function Setcome($id)
     {
-      $Come = User::find($id);
-      $Come->come = 1;
-      $Come->save();
+        $Come = User::find($id);
+        if($Come->ban != 1){
+            $Come->come = 1;
+            $Come->save();
+            return redirect('userview')->with('success', 'บันทึกสำเร็จ');
+        }
 
-      return redirect('userview')->with('success', 'บึนทึกสำเร็จ');
+       return redirect('userview')->with('success', 'คุณถูกแบน');
     }
     public function SetUncome($id)
     {
-      $Come = User::find($id);
-      $Come->come = null;
-      $Come->save();
-
-      return redirect('userview')->with('success', 'บันทึกสำเร็จ');
+        
+        $Come = User::find($id);
+        if($Come->ban != 1){
+            $Come->come = null;
+            $Come->save();
+            return redirect('userview')->with('success', 'บันทึกสำเร็จ');
+        }
+        return redirect('userview')->with('success', 'คุณถูกแบน');
     }
 }
