@@ -78,8 +78,8 @@
             		
         		
 
-	               	<a href = "{{route('edit.index')}}"><button class="ui right floated button">Back</button></a> 
-	                <button type="submit" class="ui right floated button">Approve</button>
+	               	<a href = "{{route('edit.index')}}"><button class="ui right floated button">กลับ</button></a> 
+	                <button type="submit" class="ui right floated button">บันทึก</button>
 	    	</form> 
 	    	</div>
 	    	<br>
