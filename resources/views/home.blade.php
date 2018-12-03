@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">KU SRC MARKET</div>
+                <!-- <div class="panel-heading">KU SRC MARKET</div> -->
                 <?php
                 if(auth()->user()->isAdmin == 1){
                     echo '<script type="text/javascript"> window.location = "print"    </script>';
