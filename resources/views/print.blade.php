@@ -201,7 +201,7 @@
   </thead>
   <tbody>
         @foreach ($User as $u)
-          @if($u->admin != 1)
+          @if($u->isAdmin != 1)
            @if($u->ban != 1)
             @if($u->come == 1)
               <tr>
