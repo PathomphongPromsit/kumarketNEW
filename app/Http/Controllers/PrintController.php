@@ -12,7 +12,7 @@ class PrintController extends Controller
 {
     public function userview()
     {
-        $user = User::all()->sortBy('lock');
+        $user = User::all()->sortBy('lock', SORT_NATURAL|SORT_FLAG_CASE);
         $time = Time::all();
 
         return view('print', ['User' => $user], ['times' => $time]);
