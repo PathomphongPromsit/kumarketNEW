@@ -37,7 +37,7 @@
           <div class="inline field">
           <label for="day_ku_night">วันจัดตลาด</label>
           <select name="day_ku_night" style="width:30%">
-                <option value={{$time->day_ku_night}} selected="selected">{{$time->day_ku_night}}</option>
+                <option value="{{$time->day_ku_night}}" selected="selected">{{$time->day_ku_night}}</option>
                 <option value="Sun">อาทิตย์</option>
                 <option value="Mon">จันทร์</option>
                 <option value="Tue">อังคาร</option>
@@ -51,7 +51,7 @@
           <div class="inline field">
           <label for="day_of_week_start">วันเปิดระบบ</label>
           <select name="day_of_week_start" style="width:30%">
-                <option value={{$time->day_of_week_start}} selected="selected">{{$time->day_of_week_start}}</option>
+                <option value="{{$time->day_of_week_start}}" selected="selected">{{$time->day_of_week_start}}</option>
                 <option value="Sun">อาทิตย์</option>
                 <option value="Mon">จันทร์</option>
                 <option value="Tue">อังคาร</option>
@@ -64,13 +64,13 @@
 
             <div class="inline field">
             <label for="time_start">เวลาเปิดระบบ</label>
-            <input id="time_start" type="time" name="time_start"  style="width:30%" value={{$time->time_start}}>
+            <input id="time_start" type="time" name="time_start"  style="width:30%" value="{{$time->time_start}}">
           </div>
 
             <div class="inline field">
           <label for="day_of_week_stop">วันปิดระบบ</label>
           <select name="day_of_week_stop" style="width:30%">
-                <option value={{$time->day_of_week_stop}} selected="selected">{{$time->day_of_week_stop}}</option>
+                <option value="{{$time->day_of_week_stop}}" selected="selected">{{$time->day_of_week_stop}}</option>
                 <option value="Sun">อาทิตย์</option>
                 <option value="Mon">จันทร์</option>
                 <option value="Tue">อังคาร</option>
@@ -83,7 +83,7 @@
 
             <div class="inline field">
             <label for="time_stop">เวลาปิดระบบ</label>
-            <input id="time_stop" type="time" name="time_stop"  style="width:30%" value={{$time->time_stop}}>
+            <input id="time_stop" type="time" name="time_stop"  style="width:30%" value="{{$time->time_stop}}">
           </div>
           <div class="field">
           <label for="announce">ประกาศ</label>

@@ -112,7 +112,7 @@ body {font-family: Arial;
   @if(session()->get('success'))
     <div class="alert alert-success">
       {{ session()->get('success') }}  
-    </div><br />
+</div><br />
   @endif
   <table class="table table-striped">
     <thead>

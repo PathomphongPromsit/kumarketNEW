@@ -93,7 +93,7 @@ class TimeController extends Controller
 
         $time->save();
 
-        return redirect('/settime')->with('success', 'Stock has been updated');
+        return redirect('/settime')->with('success', 'บันทึกสำเร็จ');
     }
 
     /**
@@ -121,7 +121,7 @@ class TimeController extends Controller
       $Come->come = 1;
       $Come->save();
 
-      return redirect('userview')->with('success', 'Stock has been updated');
+      return redirect('userview')->with('success', 'บึนทึกสำเร็จ');
     }
     public function SetUncome($id)
     {
@@ -129,6 +129,6 @@ class TimeController extends Controller
       $Come->come = null;
       $Come->save();
 
-      return redirect('userview')->with('success', 'Stock has been updated');
+      return redirect('userview')->with('success', 'บันทึกสำเร็จ');
     }
 }
