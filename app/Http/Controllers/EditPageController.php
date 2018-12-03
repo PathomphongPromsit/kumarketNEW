@@ -72,6 +72,7 @@ class EditPageController extends Controller
         }
     }
 
+
     /**
      * Update the specified resource in storage.
      *
@@ -89,7 +90,18 @@ class EditPageController extends Controller
             'store_name'=>'required',
             'lock'=>'required',
             'count'=>'required|integer',
+        ],
+        [   
+            'name.required' => 'กรุณากรอกชื่อให้ถูกต้อง',
+            'surname.required' => 'กรุณากรอกนามสกุลให้ถูกต้อง',
+            'email.required' => 'กรุณากรอกบัตรประชาชนให้ถูกต้อง',
+            'tel.required' => 'กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง',
+            'store_name.required' => 'กรุณากรอกชื่อร้านค้าให้ถูกต้อง',
+            'lock.required' => 'กรุณากรอกหมายเลขล็อคให้ถูกต้อง',
+            'count.required' => 'กรุณากรอกจำนวนครั้งที่ขาดให้ถูกต้อง',
+            'count.integer' => 'กรุณากรอกจำนวนครั้งที่ขาดให้ถูกต้อง',
         ]);
+
         //dd($request);
         $list = User::find($id);
 
@@ -104,7 +116,7 @@ class EditPageController extends Controller
         $list->ban = $request->get('ban');
 
         $list->save();
-        return redirect('edit'); //->with('success', 'Stock has been updated'); 
+        return redirect('edit'); 
     }
 
     /**
@@ -160,6 +172,11 @@ class EditPageController extends Controller
           
           return view('edit.edit',compact('list'));
         }
+    /**
+ * Get the error messages for the defined validation rules.
+ *
+ * @return array
+ */
 
     
     

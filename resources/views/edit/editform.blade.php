@@ -1,3 +1,5 @@
+
+
 <html>
 	<head><title>Edit</title>
 		<script src="{{ asset('js/app.js') }}" defer></script>
@@ -11,7 +13,19 @@
 			<img width="100%" src="<?php echo asset('img/02.gif'); ?>">
 			
 			<h3 style="text-align: center">แบบฟอร์มแก้ไขข้อมูล</h3>
+
+				    @if ($errors->all())
+      	<div class="alert alert-danger">
+
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        
+      </div>
+    @endif
+
 			<div div class="card">
+
 			<form class="ui form" style="margin: 2em;" method="post" action="{{ route('edit.update', $list->id) }}">
 			        @method('PATCH')
         			@csrf	
@@ -61,7 +75,7 @@
 	                	<label for="count">จำนวนครั้งที่ขาด</label>
 	                	<div class="two fields">
 	                		<div class="field">
-          						<input type="text" class="form-control" name="count" placeholder="Shop Zone Number" value="{{ $list->count }}" />
+          						<input type="text" class="form-control" name="count" placeholder="Not Come" value="{{ $list->count }}" />
             				</div>
             				
             			</div>
