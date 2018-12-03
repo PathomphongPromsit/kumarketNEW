@@ -37,19 +37,19 @@ body {font-family: Arial;
             <div class="header item">
               KU SRC Night Market
           </div>
-          <a class="item" href='settime'>
+          <a class="item" href='/settime'>
             ตั้งเวลา
           </a>
-          <a class="item" href='print'>
+          <a class="item" href='/print'>
             พิมพ์รายงาน
           </a>
-          <a class="item" href='add'>
+          <a class="item" href='/add'>
             เพิ่มรายชื่อ
           </a>
-          <a class="item" href='edit'>
+          <a class="item" href='/edit'>
             แก้ไขรายชื่อ
           </a>
-          <a class="item" href='ban'>
+          <a class="item" href='/ban'>
             รายชื่อผู้ถูกระงับ
           </a>
             <ul class="navbar-nav ml-auto">
