@@ -60,6 +60,7 @@
                 <option value="Fri">ศุกร์</option>
                 <option value="Sat">เสาร์</option>
             </select>
+            *ก่อนวันเปิดตลาด 
           </div>
 
             <div class="inline field">
@@ -79,6 +80,7 @@
                 <option value="Fri">ศุกร์</option>
                 <option value="Sat">เสาร์</option>
             </select>
+            *หลังวันเปิดระบบ ไม่เกินวันเปิดตลาด
           </div>
 
             <div class="inline field">
