@@ -75,7 +75,7 @@
 	                	<label for="count">จำนวนครั้งที่ขาด</label>
 	                	<div class="two fields">
 	                		<div class="field">
-          						<input type="text" class="form-control" name="count" placeholder="Not Come" value="{{ $list->count }}" />
+          						<input type="number" class="form-control" name="count" placeholder="Not Come" value="{{ $list->count }}" />
             				</div>
             				
             			</div>
