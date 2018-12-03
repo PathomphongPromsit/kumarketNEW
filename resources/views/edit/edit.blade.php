@@ -31,7 +31,7 @@
           <a class="item" href='ban'>
             รายชื่อผู้ถูกระงับ
           </a>
-          <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -43,9 +43,9 @@
                                 
 
                                 <div class="ui item" aria-labelledby="navbarDropdown">
-                                     <a>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                                    <a>
+                                      {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
                                 <a class="ui green button" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -58,8 +58,9 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
-        </div></main>
+            </ul>
+        </div>
+        </main>
 
 
 

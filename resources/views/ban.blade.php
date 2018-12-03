@@ -45,7 +45,7 @@ body {font-family: Arial;
 <div class="ui segment">
   <img width="100%" src="<?php echo asset('img/02.gif'); ?>">
         <main class="py-4">
-            <div class="ui green inverted huge menu">
+        <div class="ui green inverted huge menu">
             <div class="header item">
               KU SRC Night Market
           </div>
@@ -64,8 +64,7 @@ body {font-family: Arial;
           <a class="item" href='ban'>
             รายชื่อผู้ถูกระงับ
           </a>
-
-          <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -77,9 +76,9 @@ body {font-family: Arial;
                                 
 
                                 <div class="ui item" aria-labelledby="navbarDropdown">
-                                     <a>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                                    <a>
+                                      {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
                                 <a class="ui green button" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -92,7 +91,8 @@ body {font-family: Arial;
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+            </ul>
+        </div>
         </main>
 <br>
 <div class="segment" id="Ban user">
