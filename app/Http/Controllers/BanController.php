@@ -44,7 +44,7 @@ class BanController extends Controller
       ->where('ban',1)
       ->where('lock','like','%'.$searchData.'%')
       ->where('isAdmin',null)
-      ->orderBy('lock', SORT_NATURAL|SORT_FLAG_CASE)
+      ->orderBy('lock')
       ->get();
       $data2 = array(
         'Ban' => $Ban
@@ -53,7 +53,7 @@ class BanController extends Controller
       ->where('ban',null)
       ->where('lock','like','%'.$searchData.'%')
       ->where('isAdmin',null)
-      ->orderBy('lock', SORT_NATURAL|SORT_FLAG_CASE)
+      ->orderBy('lock')
       ->get();
       $data3 = array(
         'UnBan' => $UnBan
