@@ -116,12 +116,14 @@ class TimeController extends Controller
     }
 
     public function Setcome($id)
-    {
+    {  
         $Come = User::find($id);
-        if($Come->ban != 1){
-            $Come->come = 1;
-            $Come->save();
-            return redirect('userview')->with('success', 'บันทึกสำเร็จ');
+        if ((auth()->user()->id) == $Come->id){
+            if($Come->ban != 1){
+                $Come->come = 1;
+                $Come->save();
+                return redirect('userview')->with('success', 'บันทึกสำเร็จ');
+            }
         }
 
        return redirect('userview')->with('success', 'คุณถูกแบน');
@@ -130,10 +132,12 @@ class TimeController extends Controller
     {
         
         $Come = User::find($id);
-        if($Come->ban != 1){
-            $Come->come = null;
-            $Come->save();
-            return redirect('userview')->with('success', 'บันทึกสำเร็จ');
+        if ((auth()->user()->id) == $Come->id){
+            if($Come->ban != 1){
+                $Come->come = null;
+                $Come->save();
+                return redirect('userview')->with('success', 'บันทึกสำเร็จ');
+            }
         }
         return redirect('userview')->with('success', 'คุณถูกแบน');
     }

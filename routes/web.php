@@ -57,4 +57,4 @@ Route::get('head', function(){  //add
     return view('header');
 })->middleware('admin');
 
-Route::get('sort','EditPageController@MOSs')->middleware('admin'); //print
+// Route::get('sort','EditPageController@MOSs')->middleware('admin'); //print
