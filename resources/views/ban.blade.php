@@ -84,9 +84,10 @@ body {font-family: Arial;
         </main>
 <br>
 <div style="text-align:right">
-<form action="{{ route('Bsearch')}}">
+  
+<form action="{{ route('Bsearch')}}"><div class="ui action input">
   <input type="text" name="searchData" placeholder="ค้นหาตามเลขล็อค">
-  <button type="submit">search</button>
+  <button class="ui button" type="submit">Search</button></div>
 </form>
 </div>
 <br>

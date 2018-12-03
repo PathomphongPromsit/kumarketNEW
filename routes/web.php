@@ -41,7 +41,7 @@ Route::get('editform', function(){  //add
 
 Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview']);
 
-//Route::get('/edit/search', ['as'=>'search','uses' => 'EditPageController@search'])->middleware('admin');
+Route::get('/edit/search', ['as'=>'search','uses' => 'EditPageController@search'])->middleware('admin');
 Route::get('/edit/{id}/del', ['as' => 'del','uses' => 'EditPageController@destroy'])->middleware('admin');
 Route::resource('edit', 'EditPageController')->middleware('admin');
 

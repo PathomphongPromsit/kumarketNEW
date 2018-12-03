@@ -16,19 +16,19 @@
             <div class="header item">
               KU SRC Night Market
           </div>
-          <a class="item" href='settime'>
+          <a class="item" href='/settime'>
             ตั้งเวลา
           </a>
-          <a class="item" href='print'>
+          <a class="item" href='/print'>
             พิมพ์รายงาน
           </a>
-          <a class="item" href='add'>
+          <a class="item" href='/add'>
             เพิ่มรายชื่อ
           </a>
-          <a class="item" href='edit'>
+          <a class="item" href='/edit'>
             แก้ไขรายชื่อ
           </a>
-          <a class="item" href='ban'>
+          <a class="item" href='/ban'>
             รายชื่อผู้ถูกระงับ
           </a>
             <ul class="navbar-nav ml-auto">
@@ -65,6 +65,14 @@
 
 
         <h3 style="text-align: center">ข้อมูลผู้ใช้งาน</h3>
+        <div style="text-align:right">
+          <form action="{{ route('search')}}">
+            <div class="ui action input">
+              <input type="text" name="searchData" placeholder="ค้นหาตามเลขล็อค">
+              <button class="ui button" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
         <table class="ui celled table" style="text-align: center">
           <thead>
             <tr><th width="9%"><center>หมายเลขล็อค</center></th>
@@ -81,12 +89,12 @@
           <tbody>
             @foreach($list as $name)
             <tr>
-              <td>{{ $name['lock']}}</td>
-              <td>{{ $name['name']}}</td>
-              <td>{{ $name['surname']}}</td>
-              <td>{{ $name['email']}}</td>
-              <td>{{ $name['store_name']}}</td>
-              <td>{{ $name['tel']}}</td>
+              <td>{{ $name->lock }}</td>
+              <td>{{ $name->name }}</td>
+              <td>{{ $name->surname }}</td>
+              <td>{{ $name->email }}</td>
+              <td>{{ $name->store_name }}</td>
+              <td>{{ $name->tel }}</td>
               <?php if($name->come != 1) {?>
                  <td><?php echo "ไม่มา";?></td>
                 <?php };?>
@@ -94,7 +102,7 @@
                  <td><?php echo "มา";?></td>
                 <?php };?>
 
-              <td>{{ $name['count']}}</td>
+              <td>{{ $name->count }}</td>
 
               <?php if($name->ban != 1) {?>
                  <td><?php echo "";?></td>

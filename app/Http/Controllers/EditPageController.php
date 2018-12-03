@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use app\User;
 class EditPageController extends Controller
 {
@@ -89,7 +90,7 @@ class EditPageController extends Controller
             'lock'=>'required',
             'count'=>'required|integer',
         ]);
-    
+        //dd($request);
         $list = User::find($id);
 
         $list->name = $request->get('name');
@@ -135,6 +136,30 @@ class EditPageController extends Controller
         return view('testSort', ['User' => $list]);
     }
 
+    // protected function validator(array $data)
+    // {
+    //     return Validator::make($data, [
+    //         'name' => ['required', 'string', 'max:255'],
+    //         'email' => ['required', 'string', 'max:255', 'unique:users'],
+    //         'password' => ['required', 'string', 'confirmed'],
+    //         'surname' => ['required', 'string', 'max:255'],
+    //     ]);
+    // }
+
+    public function search(Request $request)
+        {
+          $searchData = $request->searchData;
+          $list = DB::table('users')
+          ->where('lock','like','%'.$searchData.'%')
+          ->where('isAdmin',null)
+          ->orderBy('lock')
+          ->get();
+          $data2 = array(
+            'list' => $list
+          );
+          
+          return view('edit.edit',compact('list'));
+        }
 
     
     
