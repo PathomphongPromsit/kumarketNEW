@@ -170,21 +170,32 @@
 							<textarea id="announce" name="announce" rows="4" cols="50"  readonly value="{{$time->announce}}" >{{$time->announce}} </textarea>
 							<br>
 							<br>
-							<?php if(Auth::user()->come == 1){?>
-								สถานะปัจจุบัน:  "มา"
+							<?php if(Auth::user()->ban== 1){?>
+								<h4 style = "color:red;">คุณถูกแบน!</h4>
 							<?php };?>
-							<?php if(Auth::user()->come != 1){?>
-								สถานะปัจจุบัน:  "ไม่มา"
+							<?php if(Auth::user()->ban != 1){?>
+								<?php if(Auth::user()->come == 1){?>
+									สถานะปัจจุบัน:  "มา"
+								<?php };?>
+								<?php if(Auth::user()->come != 1){?>
+									สถานะปัจจุบัน:  "ไม่มา"
+								<?php };?>
 							<?php };?>
 							<br>
 							<br>
 
 							<?php if($online == 'Yes'){?>
 								<?php if(Auth::user()->ban != 1){?>
-									<form>
-										<a href="{{ route('Setcome',Auth::user()->id) }}" style="color:white;" class="ui green button">มา</a>
+									<?php if(Auth::user()->come != 1){?>
+										<form>
+											<a href="{{ route('Setcome',Auth::user()->id) }}" style="color:white;" class="ui green button">มา</a>
+										</form>
+									<?php };?>
+									<?php if(Auth::user()->come == 1){?>
+										<form>
 										<a href="{{ route('Uncome',Auth::user()->id) }}" style="color:white;" class="ui red button">ไม่มา</a>
-									</form>
+										</form>
+									<?php };?>
 								<?php };?>
 							<?php };?>
 
