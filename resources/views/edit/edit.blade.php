@@ -112,8 +112,9 @@
                 <?php };?>
 
               <td>
-                <a href = "{{route('edit.edit',$name->id)}}" class = "ui mini button">Edit</a>
-                <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a>
+                <a href = "{{route('edit.edit',$name->id)}}" class = "ui mini button">แก้ไขข้อมูล</a>
+                <!-- <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a> -->
+                <a class="ui mini button" onclick="return confirm('ยืนยันการลบข้อมูลหรือไม่ ? ')" href= "{{route('del',$name->id)}}" >ลบผู้ใช้</a>
               </td>
           
               
