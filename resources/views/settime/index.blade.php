@@ -130,11 +130,105 @@ body {font-family: Arial;
     <tbody>
         @foreach($times as $time)
         <tr>
-            <!-- <td>{{$time->id}}</td> -->
+            <!-- <td>{{$time->id}}</td>
             <td>{{$time->day_ku_night}}</td>
             <td>{{$time->day_of_week_start}}</td>
             <td>{{$time->time_start}}</td>
             <td>{{$time->day_of_week_stop}}</td>
+            <td>{{$time->time_stop}}</td>
+            <td>{{$time->announce}}</td> -->
+
+            <td><?php
+              $day_ku_night = $time->day_ku_night;
+
+              switch ($day_ku_night) {
+                case "Sun":
+                    echo "อาทิตย์";
+                    break;
+                case "Mon":
+                    echo "จันทร์";
+                    break;
+                case "Tue":
+                    echo "อังคาร";
+                    break;
+                case "Wed":
+                    echo "พุธ";
+                    break;
+                case "Thu":
+                    echo "พฤหัสบดี";
+                    break;
+                case "Fri":
+                    echo "ศุกร์";
+                    break;
+                case "Sat":
+                    echo "เสาร์";
+                    break;
+                
+                default:
+                    echo "GG";
+              }
+            ?></td>
+            <td><?php
+              $day_start = $time->day_of_week_start;
+
+              switch ($day_start) {
+                case "Sun":
+                    echo "อาทิตย์";
+                    break;
+                case "Mon":
+                    echo "จันทร์";
+                    break;
+                case "Tue":
+                    echo "อังคาร";
+                    break;
+                case "Wed":
+                    echo "พุธ";
+                    break;
+                case "Thu":
+                    echo "พฤหัสบดี";
+                    break;
+                case "Fri":
+                    echo "ศุกร์";
+                    break;
+                case "Sat":
+                    echo "เสาร์";
+                    break;
+                
+                default:
+                    echo "GG";
+              }
+            ?></td>
+            <td>{{$time->time_start}}</td>
+            <td><?php
+              $day_stop = $time->day_of_week_stop;
+
+              switch ($day_stop) {
+                case "Sun":
+                    echo "อาทิตย์";
+                    break;
+                case "Mon":
+                    echo "จันทร์";
+                    break;
+                case "Tue":
+                    echo "อังคาร";
+                    break;
+                case "Wed":
+                    echo "พุธ";
+                    break;
+                case "Thu":
+                    echo "พฤหัสบดี";
+                    break;
+                case "Fri":
+                    echo "ศุกร์";
+                    break;
+                case "Sat":
+                    echo "เสาร์";
+                    break;
+                
+                default:
+                    echo "GG";
+              }
+            ?></td>
             <td>{{$time->time_stop}}</td>
             <td>{{$time->announce}}</td>
             <td><a href="{{ route('settime.edit',$time->id)}}" class="btn btn-primary">แก้ไขการตั้งค่า</a></td>
