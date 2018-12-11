@@ -30,9 +30,9 @@ class AddAdminController extends Controller
         
         'email' => $request->get('email'),
         'password' => Hash::make($request->get('password')),
-        'isAdmin' => 1,
+        'isAdmin' => '1',
 
-        'name' => NULL,
+        'name' => "admin".$request->get('email'),
         'surname' => NULL,
         'store_name' => NULL,
         'lock'=>  NULL,

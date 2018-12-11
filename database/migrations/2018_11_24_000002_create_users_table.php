@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable();                                     //ชื่อ
+            $table->string('name')->nullable();                         //ชื่อ
             $table->string('email')->unique();                          //เลขบัตร
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');                                 //pass
@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('lock')->unique()->nullable();                         //เลขล๊อค
             $table->string('ban')->nullable();                          // แบน =1
             $table->string('come')->nullable();                         // มา =1
-            $table->integer('count')->default('0');                         // นับการขาด
+            $table->integer('count')->default('0');                     // นับการขาด
 
         });
     }
