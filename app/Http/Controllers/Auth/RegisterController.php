@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'confirmed'],
             'surname' => ['required', 'string', 'max:255'],
-            'tel' => ['required', 'numeric','min:10'],
+            'tel' => ['required', 'numeric', 'digits:10'],
             'lock' => ['required', 'string', 'max:255', 'unique:users'],
         ]);
     }
@@ -66,7 +66,7 @@ class RegisterController extends Controller
      *
      * @param  array  $data
      * @return \App\User
-     */
+     */ 
     protected function create(array $data)
     {
         return User::create([
