@@ -85,10 +85,10 @@ class EditPageController extends Controller
         $request->validate([
             'name'=>'required',
             'surname'=>'required',
-            'email'=>'required',
+            'email'  =>  'required|unique:users,email,'.$id,  
             'tel'=> 'required',
             'store_name'=>'required',
-            'lock'=>'required',
+            'lock'  =>  'required|unique:users,lock,'.$id,  
             'count'=>'required|integer',
         ],
         [   
@@ -117,6 +117,7 @@ class EditPageController extends Controller
 
         $list->save();
         return redirect('edit'); 
+        // ->with('success', 'แก้ไขสำเร็จ')
     }
 
     /**

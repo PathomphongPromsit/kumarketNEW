@@ -14,15 +14,36 @@
 			
 			<h3 style="text-align: center">แบบฟอร์มแก้ไขข้อมูล</h3>
 
-				    @if ($errors->all())
+				    <!-- @if ($errors->all())
       	<div class="alert alert-danger">
 
             @foreach ($errors->all() as $error)
               <li>{{ $error }}</li>
             @endforeach
+      </div>
+    @endif -->
+		<div class="uper">
+				@if(session()->get('success'))
+						<div class="alert alert-success">
+						{{ session()->get('success') }}  
+		</div><br />
+				@endif
+
+			@if ($errors->all())
+      <div class="alert alert-danger">
+
+            @foreach ($errors->all() as $error)
+							@if($error == 'The email has already been taken.')
+									<li>ข้อมูล ผู้ใช้ ซ้ำ</li>
+							@endif
+							
+							@if($error == 'The lock has already been taken.')
+									<li>ข้อมูล ล๊อค ซ้ำ</li>
+							@endif
+            @endforeach
         
       </div>
-    @endif
+    	@endif
 
 			<div div class="card">
 
