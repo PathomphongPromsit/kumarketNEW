@@ -106,6 +106,10 @@ body {font-family: Arial;
                         <a class="item" href="add">
                             เพิ่มรายชื่อ
                         </a>
+
+                        <a class="item" href='addAdmin'>
+                            เพิ่มผู้ดูแลระบบ
+                        </a>
                     
                         <a class="item" href="edit">
                             แก้ไขรายชื่อ
