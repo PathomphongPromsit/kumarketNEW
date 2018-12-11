@@ -10,13 +10,13 @@
 </head>
 <body>
 
-    
+
 
   <div class="ui segment">
     <img width="100%" src="<?php echo asset('img/02.gif'); ?>">
 
     <main class="py-4">
-          
+
                 <div class="ui green inverted huge menu">
             <div class="header item">
               KU SRC Night Market
@@ -46,7 +46,7 @@
 
                         @else
                             <li>
-                                
+
 
                                 <div class="ui item" aria-labelledby="navbarDropdown">
                                      <a>
@@ -148,7 +148,7 @@
 
                                           <!-- เพิ่ม -->
                                        <div class="form-group row">
-                                              <label for="store_name" class="col-md-4 col-form-label text-md-right">{{ __('ชื่อร้าน') }}</label>
+                                              <label for="store_name" class="col-md-4 col-form-label text-md-right">{{ __('ประเภทสินค้า') }}</label>
 
                                               <div class="col-md-6">
                                                   <input id="store_name" type="text" class="form-control{{ $errors->has('store_name') ? ' is-invalid' : '' }}" name="store_name" value="{{ old('store_name') }}" required autofocus>
