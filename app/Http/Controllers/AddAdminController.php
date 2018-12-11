@@ -41,6 +41,6 @@ class AddAdminController extends Controller
 
       $user->save();
       
-      return redirect('/addAdmin')->with('success', 'เพิ่มแอดมินแล้ว');
+      return redirect('/addAdmin')->with('success', 'เพิ่มผู้ดูแลระบบสำเร็จ');
     }   
 }

@@ -100,10 +100,17 @@
                   <div class="container">
                       <div class="row justify-content-center">
                           <div class="col-md-8">
+                            <div class="uper">
+                                @if(session()->get('success'))
+                                    <div class="alert alert-success">
+                                    {{ session()->get('success') }}  
+                            </div><br />
+                                @endif
                               <div class="card">
                                   <div class="card-header">{{ __('เพิ่มรายชื่อ') }}</div>
 
                                   <div class="card-body">
+  
                                       <form method="POST" action="{{ route('register') }}">
                                           @csrf
 
