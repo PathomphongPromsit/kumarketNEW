@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('surname')->nullable();                      //นามสกุล
             $table->string('store_name')->nullable();                   //ชื่อร้าน
             $table->string('tel')->nullable();                          //เบอร์โทร
-            $table->string('lock')->nullable();                         //เลขล๊อค
+            $table->string('lock')->unique();                         //เลขล๊อค
             $table->string('ban')->nullable();                          // แบน =1
             $table->string('come')->nullable();                         // มา =1
             $table->integer('count')->default('0');                         // นับการขาด
