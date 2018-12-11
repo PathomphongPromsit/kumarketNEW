@@ -108,7 +108,8 @@
           <button class="large ui button" onclick="window.open('pdf')">Print</button>
         </td>
       </div>
-        <div class="field" style="text-align:right;"> <button class="large ui red button" onclick="location.href='{{ url('print/resetcome') }}'">ล้างข้อมูลคนมา</button> </div>
+        <!-- <div class="field" style="text-align:right;"> <button class="large ui red button" onclick="location.href='{{ url('print/resetcome') }}'">ล้างข้อมูลคนมา</button> </div> -->
+        <div class="field" style="text-align:right;"><a class="large ui red button" onclick="return confirm('ยืนยันการล้างข้อมูลหรือไม่ ? ')" href= "{{ url('print/resetcome') }}" >ล้างข้อมูลคนมา</a></div>
       </div>
      <h3>
      @foreach($times as $time)
