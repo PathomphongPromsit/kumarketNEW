@@ -73,7 +73,6 @@
 
 
 
-        <h3 style="text-align: center">ข้อมูลผู้ใช้งาน</h3>
         <div style="text-align:right">
           <form action="{{ route('search')}}">
             <div class="ui action input">
@@ -82,21 +81,49 @@
             </div>
           </form>
         </div>
-        <table class="ui celled table" style="text-align: center">
+        <h3 style="text-align: center">ข้อมูลผู้ดูแลระบบ</h3>
+<table class="ui celled table" style="text-align: center">
           <thead>
-            <tr><th width="9%"><center>หมายเลขล็อค</center></th>
-            <th width="11%"><center>ชื่อ</center></th>
-            <th width="11%"><center>นามสกุล</center></th>
-            <th width="11%"><center>เลขบัตรประชาชน</center></th>
-            <th width="18%"><center>ชื่อร้าน</center></th>
-            <th width="9%"><center>เบอร์โทรศัพท์</center></th>
-            <th width="5%"><center>ยืนยัน</center></th>
-            <th width="6%"><center>ขาด/ครั้ง</center></th>
-            <th width="9%"><center>สถานะ</center></th>
-            <th width="11%"><center>Action</center></th>
+            <tr><th width="40%"><center>ชื่อผู้ดูแลระบบ</center></th>
+              <th width="39%"><center>ชื่อสำหรับเข้าระบบ</center></th>
+            <th width="21%"><center>Action</center></th>
             </tr></thead>
           <tbody>
-            @foreach($list as $name)
+            @foreach($listAdmin as $name)
+            <tr>
+              <td>{{ $name->name }}</td>
+              <td>{{ $name->email }}</td>
+
+
+              <td>
+                <a href =""  class = "ui mini button">เปลี่ยนรหัสผ่าน</a>
+                <a href ="{{route('editadmin',$name->id)}}"  class = "ui mini button">แก้ไขข้อมูล</a>
+                <!-- <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a> -->
+                <a class="ui mini button" onclick="return confirm('ยืนยันการลบข้อมูลหรือไม่ ? ')" href= "{{route('del',$name->id)}}" >ลบผู้ใช้</a>
+              </td>
+          
+              
+            </tr>
+            @endforeach
+          </tbody>
+
+        </table>
+<h3 style="text-align: center">รายชื่อผู้ใช้งาน</h3>
+        <table class="ui celled table" style="text-align: center">
+          <thead>
+            <tr><th width="8%"><center>ล็อกที่</center></th>
+            <th width="10%"><center>ชื่อ</center></th>
+            <th width="10%"><center>นามสกุล</center></th>
+            <th width="10%"><center>เลขบัตรประชาชน</center></th>
+            <th width="14%"><center>ประเภทสินค้า</center></th>
+            <th width="9%"><center>เบอร์โทรศัพท์</center></th>
+            <th width="3%"><center>ยืนยัน</center></th>
+            <th width="6%"><center>ขาด/ครั้ง</center></th>
+            <th width="9%"><center>สถานะ</center></th>
+            <th width="21%"><center>Action</center></th>
+            </tr></thead>
+          <tbody>
+            @foreach($listUser as $name)
             <tr>
               <td>{{ $name->lock }}</td>
               <td>{{ $name->name }}</td>
@@ -121,9 +148,10 @@
                 <?php };?>
 
               <td>
+                <a href =""  class = "ui mini button">เปลี่ยนรหัสผ่าน</a>
                 <a href = "{{route('edit.edit',$name->id)}}" class = "ui mini button">แก้ไขข้อมูล</a>
                 <!-- <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a> -->
-                <a class="ui mini button" onclick="return confirm('ยืนยันการลบข้อมูลหรือไม่ ? ')" href= "{{route('del',$name->id)}}" >ลบผู้ใช้</a>
+                <a class="ui mini red button" onclick="return confirm('ยืนยันการลบข้อมูลหรือไม่ ? ')" href= "{{route('del',$name->id)}}" >ลบผู้ใช้</a>
               </td>
           
               

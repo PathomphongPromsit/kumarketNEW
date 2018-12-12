@@ -15,11 +15,11 @@ class EditPageController extends Controller
     public function index()
     {
         //
-        $list = User::all()->where('isAdmin',null)->sortBy('lock', SORT_NATURAL|SORT_FLAG_CASE);
-        $data = array(
-            'list' => $list
-        );
-        return view('edit.edit',compact('list'));
+        $listUser = User::all()->where('isAdmin',null)->sortBy('lock', SORT_NATURAL|SORT_FLAG_CASE);
+        
+        $listAdmin = User::all()->where('isAdmin',1)->sortBy('lock', SORT_NATURAL|SORT_FLAG_CASE);
+
+        return view('edit.edit',compact('listUser','listAdmin'));
     }
 
     /**
@@ -81,7 +81,9 @@ class EditPageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+
+
         $request->validate([
             'name'=>'required',
             'surname'=>'required',
@@ -149,15 +151,7 @@ class EditPageController extends Controller
         return view('testSort', ['User' => $list]);
     }
 
-    // protected function validator(array $data)
-    // {
-    //     return Validator::make($data, [
-    //         'name' => ['required', 'string', 'max:255'],
-    //         'email' => ['required', 'string', 'max:255', 'unique:users'],
-    //         'password' => ['required', 'string', 'confirmed'],
-    //         'surname' => ['required', 'string', 'max:255'],
-    //     ]);
-    // }
+
 
     public function search(Request $request)
         {
@@ -173,12 +167,6 @@ class EditPageController extends Controller
           
           return view('edit.edit',compact('list'));
         }
-    /**
- * Get the error messages for the defined validation rules.
- *
- * @return array
- */
 
-    
-    
+
 }

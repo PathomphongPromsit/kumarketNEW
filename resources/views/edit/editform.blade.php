@@ -14,36 +14,15 @@
 			
 			<h3 style="text-align: center">แบบฟอร์มแก้ไขข้อมูล</h3>
 
-				    <!-- @if ($errors->all())
+				     @if ($errors->all())
       	<div class="alert alert-danger">
 
             @foreach ($errors->all() as $error)
               <li>{{ $error }}</li>
             @endforeach
       </div>
-    @endif -->
-		<div class="uper">
-				@if(session()->get('success'))
-						<div class="alert alert-success">
-						{{ session()->get('success') }}  
-		</div><br />
-				@endif
+    @endif 
 
-			@if ($errors->all())
-      <div class="alert alert-danger">
-
-            @foreach ($errors->all() as $error)
-							@if($error == 'The email has already been taken.')
-									<li>ข้อมูล ผู้ใช้ ซ้ำ</li>
-							@endif
-							
-							@if($error == 'The lock has already been taken.')
-									<li>ข้อมูล ล๊อค ซ้ำ</li>
-							@endif
-            @endforeach
-        
-      </div>
-    	@endif
 
 			<div div class="card">
 
@@ -82,11 +61,11 @@
 	                  <!-- <label>ชื่อร้านค้า-เลขล็อค</label> -->
 	                  <div class="two fields">
 	                    <div class="field">
-	                    	<label>ชื่อร้านค้า</label>
-	                      <input type="text" class="form-control" name="store_name" placeholder="Store Name" value="{{ $list->store_name}}" />
+	                    	<label>ประเภทสินค้า</label>
+	                      <input type="text" class="form-control" name="store_name" placeholder="Product Name" value="{{ $list->store_name}}" />
 	                    </div>
 	                    <div class="field">
-	                    	<label>เลขล็อค</label>
+	                    	<label>เลขล็อก</label>
 	                      <input type="text" class="form-control" name="lock" placeholder="Shop Zone Number" value="{{ $list->lock }}" />
 	                    </div>
 	                  </div>
@@ -113,7 +92,7 @@
             		
         		
 
-	               	<a href = "{{route('edit.index')}}"><button class="ui right floated button">กลับ</button></a> 
+	               	<a href = "{{route('edit.index')}}" class="ui right floated button">กลับ</a> 
 	                <button type="submit" class="ui right floated button">บันทึก</button>
 	    	</form> 
 	    	</div>
