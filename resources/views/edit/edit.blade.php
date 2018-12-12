@@ -102,7 +102,7 @@
                 <a href ="{{route('editpassword',$name->id)}}"  class = "ui mini button">เปลี่ยนรหัสผ่าน</a>
                 <a href ="{{route('editadmin',$name->id)}}"  class = "ui mini button">แก้ไขข้อมูล</a>
                 <!-- <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a> -->
-                <a class="ui mini red button" onclick="return confirm('ยืนยันการลบข้อมูลหรือไม่ ? ')" href= "{{route('del',$name->id)}}" >ลบผู้ใช้</a>
+                <a class="ui mini red button" onclick="return confirm('ยืนยันการลบข้อมูลหรือไม่ ? ')" href= "{{route('deladmin',$name->id)}}" >ลบผู้ใช้</a>
               </td>
 
 

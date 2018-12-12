@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use app\User;
+use Illuminate\Support\Facades\Hash;
 class EditPageController extends Controller
 {
     /**
@@ -209,9 +210,9 @@ class EditPageController extends Controller
             'email'  =>  'required|unique:users,email,'.$id,
         ],
         [   
-            'name.required' => 'กรุณากรอกชื่อให้ถูกต้อง',
-            'email.required' => 'กรุณากรอกบัตรประชาชนให้ถูกต้อง',
-            'email.unique' => 'ข้อมูลบัตรประชาชนซ๊ำ',
+            'name.required' => 'กรุณากรอกชื่อผู้ดูแลระบบให้ถูกต้อง',
+            'email.required' => 'กรุณากรอกข้อมูลชื่อสำหรับเข้าระบบ',
+            'email.unique' => 'ข้อมูลชื่อสำหรับเข้าระบบซ๊ำ',
         ]);
 
         //dd($request);
@@ -221,8 +222,27 @@ class EditPageController extends Controller
         $list->email = $request->get('email');
         $list->surname = NULL;
         $list->store_name = NULL;
-        $list->lock=  NULL;
-        $list->tel= NULL;
+        $list->lock =  NULL;
+        $list->tel = NULL;
+
+        $list->save();
+        return redirect('edit'); 
+        // ->with('success', 'แก้ไขสำเร็จ')
+    }
+
+    public function updatePassword(Request $request, $id)
+    {
+        $request->validate([
+            'password' => ['required', 'string', 'confirmed'],
+        ],
+        [
+            'password.confirmed' => 'รหัสผ่านยืนยันไม่สอดคล้องกับรหัสผ่านใหม่',
+        ]);
+
+        //dd($request);
+        $list = User::find($id);
+
+        $list->password = Hash::make($request->get('password'));
 
         $list->save();
         return redirect('edit'); 
@@ -232,7 +252,7 @@ class EditPageController extends Controller
 
 
     public function destroyAdmin($id)
-    {
+    {   
         $count = User::where('isAdmin','=','1')->count();
         $list = User::find($id);
         if ($count > 1){

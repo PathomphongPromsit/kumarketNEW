@@ -14,30 +14,57 @@
 			
 			<h3 style="text-align: center">เปลี่ยนรหัสผ่าน</h3>
 
-				     @if ($errors->all())
+				<!--     @if ($errors->all())
       	<div class="alert alert-danger">
 
             @foreach ($errors->all() as $error)
               <li>{{ $error }}</li>
             @endforeach
       </div>
-    @endif 
+    @endif -->
 
 
 			<div div class="card">
 
-			<form class="ui form" style="margin: 2em;" method="post" action="">
-			        <!--@method('PATCH')
-        			@csrf-->
+			<form class="ui form" style="margin: 2em;" method="post" action="{{ route('updatepassword', $list->id) }}">
+			        @method('PATCH')
+        			@csrf
 
-	                <div class="field">
+	                <!--<div class="field">
     					<label>รหัสผ่านใหม่</label>
-    					<input type="text" name="password" placeholder="Password">
+    					<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+    					@if ($errors->has('password'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                @endif
   					</div>
   					<div class="field">
     					<label>ยืนยันรหัสผ่านใหม่</label>
-    					<input type="text" name="confirm-password" placeholder="Confirm Password">
-  					</div>
+    					<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+
+  					</div> -->
+
+  				<div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('รหัสผ่านใหม่') }}</label>
+            <div class="col-md-6">
+                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                @if ($errors->has('password'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('ยืนยันรหัสผ่านใหม่') }}</label>
+
+            <div class="col-md-6">
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+            </div>
+        </div>
 
 
 
