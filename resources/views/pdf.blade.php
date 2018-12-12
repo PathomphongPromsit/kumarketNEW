@@ -145,12 +145,12 @@
     <table border="1" width = "100%">
     <thead>
     <tr>
-        <th align="center" width="5%">หมายเลขร้าน</th>
-        <th align="center" >ชื่อ-นามสกุล</th>
+        <th align="center" width="5%">ล๊อกที่</th>
+        <th align="center" width="15%">ชื่อ-นามสกุล</th>
         <th align="center" >ใช้ไฟ</th>
-        <th align="center" width="10%">ขาจร</th>
-        <th align="center" >ประเภทสินค้า</th>
+        <th align="center" width="12%">ขาจร</th>
         <th align="center" >เบอร์โทรศัพท์</th>
+        <th align="center" >ประเภทสินค้า</th>
         <th align="center" >เล่มที่/เลขที่</th>
         <th align="center" >จำนวนเงิน</th>
         <th align="center" >สถานะ</th>
@@ -164,11 +164,11 @@
                 @if($u->come == 1)
                     <tr>
                     <td align="center">{{$u['lock']}}</td>
-                    <td>{{$u['name']}} {{$u['surname']}}</td>
+                    <td>{{$u['name']}}  {{$u['surname']}}</td>
                     <td> </td>
                     <td> </td>
-                    <td>{{$u['store_name']}}</td>
                     <td>{{$u['tel']}}</td>
+                    <td>{{$u['store_name']}}</td>
                     <td> </td>
                     <td> </td>
                     <td align="center"> มา </td>
@@ -177,11 +177,11 @@
                 @else
                     <tr>
                     <td align="center">{{$u['lock']}}</td>
-                    <td>{{$u['name']}} {{$u['surname']}}</td>
+                    <td>{{$u['name']}}  {{$u['surname']}}</td>
                     <td> </td>
                     <td> </td>
-                    <td>{{$u['store_name']}}</td>
                     <td>{{$u['tel']}}</td>
+                    <td>{{$u['store_name']}}</td>
                     <td> </td>
                     <td> </td>
                     <td align="center"> ไม่มา </td>
