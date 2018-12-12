@@ -160,9 +160,8 @@
     <tbody>
         @foreach ($User as $u)
             @if($u->isAdmin != 1)
-              @if($u->ban != 1)
-                @if($u->come == 1)
-                    <tr>
+                @if($u->name == NULL)
+                  <tr>
                     <td align="center">{{$u['lock']}}</td>
                     <td>{{$u['name']}}  {{$u['surname']}}</td>
                     <td> </td>
@@ -171,23 +170,52 @@
                     <td>{{$u['store_name']}}</td>
                     <td> </td>
                     <td> </td>
-                    <td align="center"> มา </td>
                     <td> </td>
-                    </tr>
+                    <td> </td>
+                  </tr>
                 @else
-                    <tr>
-                    <td align="center">{{$u['lock']}}</td>
-                    <td>{{$u['name']}}  {{$u['surname']}}</td>
-                    <td> </td>
-                    <td> </td>
-                    <td>{{$u['tel']}}</td>
-                    <td>{{$u['store_name']}}</td>
-                    <td> </td>
-                    <td> </td>
-                    <td align="center"> ไม่มา </td>
-                    <td> </td>
-                    </tr>
-                @endif
+                  @if($u->ban != 1)
+                        @if($u->come == 1)
+                            <tr>
+                            <td align="center">{{$u['lock']}}</td>
+                            <td>{{$u['name']}}  {{$u['surname']}}</td>
+                            <td> </td>
+                            <td> </td>
+                            <td>{{$u['tel']}}</td>
+                            <td>{{$u['store_name']}}</td>
+                            <td> </td>
+                            <td> </td>
+                            <td align="center"> มา </td>
+                            <td> </td>
+                            </tr>
+                        @else
+                            <tr>
+                            <td align="center">{{$u['lock']}}</td>
+                            <td>{{$u['name']}}  {{$u['surname']}}</td>
+                            <td> </td>
+                            <td> </td>
+                            <td>{{$u['tel']}}</td>
+                            <td>{{$u['store_name']}}</td>
+                            <td> </td>
+                            <td> </td>
+                            <td align="center"> ไม่มา </td>
+                            <td> </td>
+                            </tr>
+                        @endif
+                  @else
+                      <tr>
+                      <td align="center">{{$u['lock']}}</td>
+                      <td>{{$u['name']}}  {{$u['surname']}}</td>
+                      <td> </td>
+                      <td> </td>
+                      <td>{{$u['tel']}}</td>
+                      <td>{{$u['store_name']}}</td>
+                      <td> </td>
+                      <td> </td>
+                      <td align="center"> ถูกระงับการใช้งาน </td>
+                      <td> </td>
+                      </tr>
+                  @endif
               @endif
             @endif
         @endforeach
