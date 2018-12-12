@@ -51,7 +51,7 @@
               <option value="Mon" <?php if ($time->day_ku_night == 'Mon') echo "selected"; ?>>จันทร์</option>
               <option value="Tue" <?php if ($time->day_ku_night == 'Tue') echo "selected"; ?>>อังคาร</option>
               <option value="Wed" <?php if ($time->day_ku_night == 'Wed') echo "selected"; ?>>พุธ</option>
-              <option value="The" <?php if ($time->day_ku_night == 'The') echo "selected"; ?>>พฤหัสบดี</option>
+              <option value="Thu" <?php if ($time->day_ku_night == 'Thu') echo "selected"; ?>>พฤหัสบดี</option>
               <option value="Fri" <?php if ($time->day_ku_night == 'Fri') echo "selected"; ?>>ศุกร์</option>
               <option value="Sat" <?php if ($time->day_ku_night == 'Sat') echo "selected"; ?>>เสาร์</option>
           </select> 
@@ -74,7 +74,7 @@
               <option value="Mon" <?php if ($time->day_of_week_start == 'Mon') echo "selected"; ?>>จันทร์</option>
               <option value="Tue" <?php if ($time->day_of_week_start == 'Tue') echo "selected"; ?>>อังคาร</option>
               <option value="Wed" <?php if ($time->day_of_week_start == 'Wed') echo "selected"; ?>>พุธ</option>
-              <option value="The" <?php if ($time->day_of_week_start == 'The') echo "selected"; ?>>พฤหัสบดี</option>
+              <option value="Thu" <?php if ($time->day_of_week_start == 'Thu') echo "selected"; ?>>พฤหัสบดี</option>
               <option value="Fri" <?php if ($time->day_of_week_start == 'Fri') echo "selected"; ?>>ศุกร์</option>
               <option value="Sat" <?php if ($time->day_of_week_start == 'Sat') echo "selected"; ?>>เสาร์</option>
           </select> 
@@ -103,7 +103,7 @@
                 <option value="Mon" <?php if ($time->day_of_week_stop == 'Mon') echo "selected"; ?>>จันทร์</option>
                 <option value="Tue" <?php if ($time->day_of_week_stop == 'Tue') echo "selected"; ?>>อังคาร</option>
                 <option value="Wed" <?php if ($time->day_of_week_stop == 'Wed') echo "selected"; ?>>พุธ</option>
-                <option value="The" <?php if ($time->day_of_week_stop == 'The') echo "selected"; ?>>พฤหัสบดี</option>
+                <option value="Thu" <?php if ($time->day_of_week_stop == 'Thu') echo "selected"; ?>>พฤหัสบดี</option>
                 <option value="Fri" <?php if ($time->day_of_week_stop == 'Fri') echo "selected"; ?>>ศุกร์</option>
                 <option value="Sat" <?php if ($time->day_of_week_stop == 'Sat') echo "selected"; ?>>เสาร์</option>
             </select> 
