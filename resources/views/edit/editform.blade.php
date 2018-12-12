@@ -84,7 +84,7 @@
             		<div class="field">
 						<select name="come" style="width:30%">
                 					<option value = "1" <?php if ($list->come == '1') echo "selected"; ?>>มา</option>
-                					<option value = " " <?php if ($list->come == ' ') echo "selected"; ?>>ไม่มา</option>
+                					<option value = " " <?php if ($list->come == NULL) echo "selected"; ?>>ไม่มา</option>
             					</select>
 	                    </div>
 	                

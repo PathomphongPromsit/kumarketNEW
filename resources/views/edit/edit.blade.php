@@ -137,14 +137,20 @@
               <td>{{ $name->email }}</td>
               <td>{{ $name->store_name }}</td>
               <td>{{ $name->tel }}</td>
-              <?php if($name->come != 1) {?>
+              <?php if($name->come != 1 and $name->name != null) {?>
                  <td><?php echo "ไม่มา";?></td>
                 <?php };?>
-              <?php if($name->come == 1) {?>
+              <?php if($name->come == 1 and $name->name != null) {?>
                  <td><?php echo "มา";?></td>
                 <?php };?>
+              <?php if($name->name == null) {?>
+                 <td><?php echo "-";?></td>
+                 <td><?php echo "-";?></td>
+              <?php };?>
 
+              <?php if($name->name != null) {?>
               <td>{{ $name->count }}</td>
+              <?php };?>
 
               <?php if($name->ban != 1) {?>
                  <td><?php echo "";?></td>
