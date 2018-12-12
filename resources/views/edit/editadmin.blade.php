@@ -26,7 +26,7 @@
 
 			<div div class="card">
 
-			<form class="ui form" style="margin: 2em;" method="post" action="">
+			<form class="ui form" style="margin: 2em;" method="post" action="{{ route('updateadmin', $list->id) }}">
 			        @method('PATCH')
         			@csrf
 

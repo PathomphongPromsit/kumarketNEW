@@ -35,22 +35,11 @@ Route::get('add', function(){  //add
     return view('add');
 })->middleware('admin');
 
-Route::get('editform', function(){  //add
-    return view('editform');
-})->middleware('admin');
-
-Route::get('editadmin', function(){  //add
-    return view('edit.editadmin');
-})->middleware('admin');
-
-Route::get('editpassword', function(){  //add
-    return view('edit.editpassword');
-})->middleware('admin');
-
 Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview']);
 
 Route::get('/edit/search', ['as'=>'search','uses' => 'EditPageController@search'])->middleware('admin');
 Route::get('/edit/{id}/del', ['as' => 'del','uses' => 'EditPageController@destroy'])->middleware('admin');
+Route::patch('/edit/{id}/updateAdmin', ['as' => 'updateadmin','uses' => 'EditPageController@updateAdmin'])->middleware('admin');
 Route::get('/edit/{id}/editadmin', ['as' => 'editadmin','uses' => 'EditPageController@editAdmin'])->middleware('admin');
 Route::get('/edit/{id}/editpassword', ['as' => 'editpassword','uses' => 'EditPageController@editPassword'])->middleware('admin');
 Route::resource('edit', 'EditPageController')->middleware('admin');

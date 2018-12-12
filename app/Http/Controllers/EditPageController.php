@@ -202,6 +202,34 @@ class EditPageController extends Controller
           return view('edit.edit',compact('list'));
         }
 
+    public function updateAdmin(Request $request, $id)
+    {
+        $request->validate([
+            'name'=>'required',
+            'email'  =>  'required|unique:users,email,'.$id,
+        ],
+        [   
+            'name.required' => 'กรุณากรอกชื่อให้ถูกต้อง',
+            'email.required' => 'กรุณากรอกบัตรประชาชนให้ถูกต้อง',
+            'email.unique' => 'ข้อมูลบัตรประชาชนซ๊ำ',
+        ]);
+
+        //dd($request);
+        $list = User::find($id);
+
+        $list->name = $request->get('name');
+        $list->email = $request->get('email');
+        $list->surname = NULL;
+        $list->store_name = NULL;
+        $list->lock=  NULL;
+        $list->tel= NULL;
+
+        $list->save();
+        return redirect('edit'); 
+        // ->with('success', 'แก้ไขสำเร็จ')
+    }
+
+
 
     public function destroyAdmin($id)
     {
