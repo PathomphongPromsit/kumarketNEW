@@ -90,6 +90,18 @@ class EditPageController extends Controller
         }
     }
 
+        public function editPassword($id)
+    {
+        if($id !== ''){
+            $list = User::find($id);
+            /*
+            $data = array(
+                'list' => $list
+            );*/
+            return view('edit.editpassword', compact('list'));
+        }
+    }
+
 
     /**
      * Update the specified resource in storage.
@@ -115,9 +127,11 @@ class EditPageController extends Controller
             'name.required' => 'กรุณากรอกชื่อให้ถูกต้อง',
             'surname.required' => 'กรุณากรอกนามสกุลให้ถูกต้อง',
             'email.required' => 'กรุณากรอกบัตรประชาชนให้ถูกต้อง',
+            'email.unique' => 'ข้อมูลบัตรประชาชนซ๊ำ',
             'tel.required' => 'กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง',
             'store_name.required' => 'กรุณากรอกชื่อร้านค้าให้ถูกต้อง',
             'lock.required' => 'กรุณากรอกหมายเลขล็อคให้ถูกต้อง',
+            'lock.unique' => 'ข้อมูเลขล็อกซ๊ำ',
             'count.required' => 'กรุณากรอกจำนวนครั้งที่ขาดให้ถูกต้อง',
             'count.integer' => 'กรุณากรอกจำนวนครั้งที่ขาดให้ถูกต้อง',
         ]);
@@ -139,6 +153,8 @@ class EditPageController extends Controller
         return redirect('edit'); 
         // ->with('success', 'แก้ไขสำเร็จ')
     }
+
+    
 
     /**
      * Remove the specified resource from storage.

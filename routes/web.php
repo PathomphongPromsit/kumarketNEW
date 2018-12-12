@@ -52,6 +52,7 @@ Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview']);
 Route::get('/edit/search', ['as'=>'search','uses' => 'EditPageController@search'])->middleware('admin');
 Route::get('/edit/{id}/del', ['as' => 'del','uses' => 'EditPageController@destroy'])->middleware('admin');
 Route::get('/edit/{id}/editadmin', ['as' => 'editadmin','uses' => 'EditPageController@editAdmin'])->middleware('admin');
+Route::get('/edit/{id}/editpassword', ['as' => 'editpassword','uses' => 'EditPageController@editPassword'])->middleware('admin');
 Route::resource('edit', 'EditPageController')->middleware('admin');
 
 Route::get('/ban',['as'=>'ban','uses'=>'BanController@index'])->middleware('admin'); //ban
