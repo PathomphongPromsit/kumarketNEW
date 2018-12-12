@@ -177,7 +177,7 @@
 
                                           <!-- เพิ่ม -->
                                        <div class="form-group row">
-                                              <label for="lock" class="col-md-4 col-form-label text-md-right">{{ __('หมายเลขล็อก') }}</label>
+                                              <label for="lock" class="col-md-4 col-form-label text-md-right">{{ __('ล๊อกที่') }}</label>
 
                                               <div class="col-md-6">
                                                   <input id="lock" type="text" class="form-control{{ $errors->has('lock') ? ' is-invalid' : '' }}" name="lock" value="{{ old('lock') }}" required autofocus>

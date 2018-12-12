@@ -40,6 +40,6 @@ class AddLockController extends Controller
 
       $user->save();
       
-      return redirect('/addLock')->with('success', 'เพิ่มล๊อกเปล่าสำเร็จ');
+      return redirect('/addLock')->with('success', 'เพิ่มล๊อกว่างสำเร็จ');
     }   
 }
