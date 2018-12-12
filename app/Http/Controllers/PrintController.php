@@ -21,7 +21,7 @@ class PrintController extends Controller
     public function resetcome()
     {
 
-        User::where('come', NULL)-> where('ban', NULL)-> increment('count',1);
+        User::where('come', NULL)-> where('ban', NULL)-> whereNotNull('name')-> increment('count',1);  //not come not ban
         
         User::query()->update(['come' => NULL]);
         return redirect('print')->with('success', 'database has been updated');
