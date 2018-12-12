@@ -55,3 +55,5 @@ Route::get('/user/{id}/SetUn',['as'=>'Uncome','uses'=>'TimeController@SetUncome'
 Route::get('/user/{id}/set',['as'=>'Setcome','uses'=>'TimeController@Setcome'])->middleware('auth');
 
 Route::resource('addAdmin', 'AddAdminController')->middleware('admin');//addAdmin
+
+Route::resource('addLock', 'AddLockController')->middleware('admin');//addAdmin
