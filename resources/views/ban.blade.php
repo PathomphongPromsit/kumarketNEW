@@ -87,9 +87,9 @@ body {font-family: Arial;
         </main>
 <br>
 <div style="text-align:right">
-  
+
 <form action="{{ route('Bsearch')}}"><div class="ui action input">
-  <input type="text" name="searchData" placeholder="ค้นหาตามเลขล็อค">
+  <input type="text" name="searchData" placeholder="่ค้นหาโดยล็อก,ชื่อ,นามสกุล" >
   <button class="ui button" type="submit">Search</button></div>
 </form>
 </div>
@@ -102,10 +102,10 @@ body {font-family: Arial;
     <table class="ui celled table" style="text-align: center">
       <thead>
       <tr >
-        <th width="10%"><center>หมายเลขล็อค</center></th>
+        <th width="10%"><center>ล๊อกที่</center></th>
         <th width="17.5%">ชื่อ</th>
         <th width="17.5%">นามสกุล</th>
-        <th width="17.5%">ชื่อร้าน</th>
+        <th width="17.5%">ประเภทสินค้า</th>
         <th width="17.5%">เบอร์โทร</th>
         <th width="10%">ขาด/ครั้ง</th>
         <th width="10%"></th>
@@ -113,13 +113,15 @@ body {font-family: Arial;
       <tbody>
         @foreach ($Ban as $B)
         <tr>
+          <?php if($B->isAdmin == null and $B->ban == 1) {?>
           <td>{{ $B->lock}}</td>
           <td>{{ $B->name}}</td>
           <td>{{ $B->surname}}</td>
           <td>{{ $B->store_name}}</td>
           <td>{{ $B->tel}}</td>
           <td>{{ $B->count}}</td>
-          <td><a href="{{ route('Unban',$B->id) }}"><button class="ui primary button">Cancel Ban</button></a></td>
+          <td><a href="{{ route('Unban',$B->id) }}"><button class="ui primary button">ยกเลิกการระงับ</button></a></td>
+          <?php };?>
         </tr>
         @endforeach
       </tbody>
@@ -133,10 +135,10 @@ body {font-family: Arial;
     <table class="ui celled table" style="text-align: center">
       <thead>
       <tr>
-        <th width="10%"><center>หมายเลขล็อค</center></th>
+        <th width="10%"><center>ล๊อกที่</center></th>
         <th width="17.5%">ชื่อ</th>
         <th width="17.5%">นามสกุล</th>
-        <th width="17.5%">ชื่อร้าน</th>
+        <th width="17.5%">ประเภทสินค้า</th>
         <th width="17.5%">เบอร์โทร</th>
         <th width="10%">ขาด/ครั้ง</th>
         <th width="10%"></th>
@@ -144,13 +146,15 @@ body {font-family: Arial;
       <tbody>
         @foreach ($UnBan as $UB)
         <tr>
+          <?php if($UB->isAdmin == null and $UB->ban == null) {?>
           <td>{{ $UB->lock}}</td>
           <td>{{ $UB->name}}</td>
           <td>{{ $UB->surname}}</td>
           <td>{{ $UB->store_name}}</td>
           <td>{{ $UB->tel}}</td>
           <td>{{ $UB->count}}</td>
-          <td><a href="{{ route('Setban',$UB->id) }}"><button class="ui secondary button">Ban</button></a></td>
+          <td><a href="{{ route('Setban',$UB->id) }}"><button class="ui secondary button">ระงับผู้ใช้</button></a></td>
+          <?php };?>
         </tr>
         @endforeach
       </tbody>

@@ -40,20 +40,18 @@ class BanController extends Controller
     public function search(Request $request)
     {
       $searchData = $request->searchData;
-      $Ban = DB::table('users')
-      ->where('ban',1)
-      ->where('lock','like','%'.$searchData.'%')
-      ->where('isAdmin',null)
-      ->orderBy('lock')
+      $Ban = User::where('lock','like','%'.$searchData.'%')
+      ->orwhere('name','like','%'.$searchData.'%')
+      ->orwhere('surname','like','%'.$searchData.'%')
+      ->orderBy('lock', 'ASC')
       ->get();
       $data2 = array(
         'Ban' => $Ban
       );
-      $UnBan = DB::table('users')
-      ->where('ban',null)
-      ->where('lock','like','%'.$searchData.'%')
-      ->where('isAdmin',null)
-      ->orderBy('lock')
+      $UnBan = User::where('lock','like','%'.$searchData.'%')
+      ->orwhere('name','like','%'.$searchData.'%')
+      ->orwhere('surname','like','%'.$searchData.'%')
+      ->orderBy('lock', 'ASC')
       ->get();
       $data3 = array(
         'UnBan' => $UnBan
