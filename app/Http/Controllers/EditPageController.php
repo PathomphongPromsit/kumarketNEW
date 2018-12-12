@@ -203,4 +203,15 @@ class EditPageController extends Controller
         }
 
 
+    public function destroyAdmin($id)
+    {
+        $count = User::where('isAdmin','=','1')->count();
+        $list = User::find($id);
+        if ($count > 1){
+            $list->delete();
+        }
+        return redirect('edit');
+        
+    }
+
 }
