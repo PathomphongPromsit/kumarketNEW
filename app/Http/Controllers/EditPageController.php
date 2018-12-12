@@ -72,6 +72,24 @@ class EditPageController extends Controller
         }
     }
 
+        /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function editAdmin($id)
+    {
+        if($id !== ''){
+            $list = User::find($id);
+            /*
+            $data = array(
+                'list' => $list
+            );*/
+            return view('edit.editadmin', compact('list'));
+        }
+    }
+
 
     /**
      * Update the specified resource in storage.
