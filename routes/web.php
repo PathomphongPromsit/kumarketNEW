@@ -54,10 +54,4 @@ Route::get('/userview',['as'=>'times','uses'=>'TimeController@userview'])->middl
 Route::get('/user/{id}/SetUn',['as'=>'Uncome','uses'=>'TimeController@SetUncome'])->middleware('auth');
 Route::get('/user/{id}/set',['as'=>'Setcome','uses'=>'TimeController@Setcome'])->middleware('auth');
 
-Route::get('head', function(){  //add
-    return view('header');
-})->middleware('admin');
-
-// Route::get('sort','EditPageController@MOSs')->middleware('admin'); //print
-
 Route::resource('addAdmin', 'AddAdminController')->middleware('admin');//addAdmin
