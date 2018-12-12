@@ -76,14 +76,7 @@
 
 
 
-        <div style="text-align:right">
-          <form action="{{ route('search')}}">
-            <div class="ui action input">
-              <input type="text" name="searchData" placeholder="ค้นหาตามเลขล็อค">
-              <button class="ui button" type="submit">Search</button>
-            </div>
-          </form>
-        </div>
+        
         <h3 style="text-align: center">ข้อมูลผู้ดูแลระบบ</h3>
 <table class="ui celled table" style="text-align: center">
           <thead>
@@ -98,9 +91,9 @@
               <td>{{ $name->email }}</td>
 
 
-              <td>
-                <a href ="{{route('editpassword',$name->id)}}"  class = "ui mini button">เปลี่ยนรหัสผ่าน</a>
-                <a href ="{{route('editadmin',$name->id)}}"  class = "ui mini button">แก้ไขข้อมูล</a>
+              <td><a href ="{{route('editadmin',$name->id)}}"  class = "ui mini button">แก้ไขข้อมูล</a>
+                <a href ="{{route('editpassword',$name->id)}}" onclick="return confirm('ยืนยันการเปลี่ยนรหัสผ่าน ? ')" class = "ui mini button">เปลี่ยนรหัสผ่าน</a>
+                
                 <!-- <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a> -->
                 <a class="ui mini red button" onclick="return confirm('ยืนยันการลบข้อมูลหรือไม่ ? ')" href= "{{route('deladmin',$name->id)}}" >ลบผู้ใช้</a>
               </td>
@@ -111,7 +104,16 @@
           </tbody>
 
         </table>
+
 <h3 style="text-align: center">รายชื่อผู้ใช้งาน</h3>
+<div style="text-align:right">
+          <form action="{{ route('search')}}">
+            <div class="ui action input">
+              <input type="text" name="searchData" placeholder="่ค้นหาโดยล็อก,ชื่อ,นามสกุล">
+              <button class="ui button" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
         <table class="ui celled table" style="text-align: center">
           <thead>
             <tr><th width="8%"><center>ล็อกที่</center></th>
@@ -128,6 +130,7 @@
           <tbody>
             @foreach($listUser as $name)
             <tr>
+              <?php if($name->isAdmin == null) {?>
               <td>{{ $name->lock }}</td>
               <td>{{ $name->name }}</td>
               <td>{{ $name->surname }}</td>
@@ -150,13 +153,13 @@
                  <td><?php echo "ถูกระงับการใช้งาน";?></td>
                 <?php };?>
 
-              <td>
-                <a href ="{{route('editpassword',$name->id)}}"  class = "ui mini button">เปลี่ยนรหัสผ่าน</a>
-                <a href = "{{route('edit.edit',$name->id)}}" class = "ui mini button">แก้ไขข้อมูล</a>
+              <td><a href = "{{route('edit.edit',$name->id)}}"  class = "ui mini button">แก้ไขข้อมูล</a>
+                <a href ="{{route('editpassword',$name->id)}}" onclick="return confirm('ยืนยันการเปลี่ยนรหัสผ่าน ? ')"  class = "ui mini button">เปลี่ยนรหัสผ่าน</a>
+                
                 <!-- <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a> -->
                 <a class="ui mini red button" onclick="return confirm('ยืนยันการลบข้อมูลหรือไม่ ? ')" href= "{{route('del',$name->id)}}" >ลบผู้ใช้</a>
               </td>
-
+              <?php };?>
 
             </tr>
             @endforeach

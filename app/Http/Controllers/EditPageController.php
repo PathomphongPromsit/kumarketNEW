@@ -191,16 +191,15 @@ class EditPageController extends Controller
     public function search(Request $request)
         {
           $searchData = $request->searchData;
-          $list = DB::table('users')
-          ->where('lock','like','%'.$searchData.'%')
-          ->where('isAdmin',null)
-          ->orderBy('lock')
-          ->get();
-          $data2 = array(
-            'list' => $list
-          );
+          $listUser = User::where('lock','like','%'.$searchData.'%')
+                ->orwhere('name','like','%'.$searchData.'%')
+                ->orwhere('surname','like','%'.$searchData.'%')
+                ->orderBy('lock', 'ASC')
+                ->get();
+
+         $listAdmin = User::all()->where('isAdmin',1)->sortBy('lock', SORT_NATURAL|SORT_FLAG_CASE);
           
-          return view('edit.edit',compact('list'));
+          return view('edit.edit',compact('listAdmin','listUser'));
         }
 
     public function updateAdmin(Request $request, $id)
@@ -220,10 +219,6 @@ class EditPageController extends Controller
 
         $list->name = $request->get('name');
         $list->email = $request->get('email');
-        $list->surname = NULL;
-        $list->store_name = NULL;
-        $list->lock =  NULL;
-        $list->tel = NULL;
 
         $list->save();
         return redirect('edit'); 
