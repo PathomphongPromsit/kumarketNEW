@@ -209,6 +209,7 @@ class EditPageController extends Controller
         $list = User::find($id);
         if ($count > 1){
             $list->delete();
+            // test
         }
         return redirect('edit');
         
