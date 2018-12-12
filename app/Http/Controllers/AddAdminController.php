@@ -22,8 +22,10 @@ class AddAdminController extends Controller
     public function store(Request $request)
     {
       $request->validate([
+        'name' => ['required', 'string', 'max:255'],
         'email' => ['required', 'string', 'max:255', 'unique:users'],
         'password' => ['required', 'string', 'confirmed'],
+  
       ]);
 
       $user= new User([
@@ -32,7 +34,7 @@ class AddAdminController extends Controller
         'password' => Hash::make($request->get('password')),
         'isAdmin' => '1',
 
-        'name' => "admin".$request->get('email'),
+        'name' => $request->get('name'),
         'surname' => NULL,
         'store_name' => NULL,
         'lock'=>  NULL,
