@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Add Admin</title>
+  <title>Add Lock</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,11 +43,11 @@ body {font-family: Arial;
 </head>
 <body>
 
-        
+
   <div class="ui segment">
     <img width="100%" src="<?php echo asset('img/02.gif'); ?>">
         <main class="py-4">
-          
+
                 <div class="ui green inverted huge menu">
             <div class="header item">
               KU SRC Night Market
@@ -63,6 +63,9 @@ body {font-family: Arial;
           </a>
           <a class="item" href='addAdmin'>
             เพิ่มผู้ดูแลระบบ
+          </a>
+          <a class="item" href='addLock'>
+            เพิ่มล็อกว่าง
           </a>
           <a class="item" href='edit'>
             แก้ไขรายชื่อ
@@ -80,7 +83,7 @@ body {font-family: Arial;
 
                         @else
                             <li>
-                                
+
 
                                 <div class="ui item" aria-labelledby="navbarDropdown">
                                      <a>
@@ -114,13 +117,13 @@ body {font-family: Arial;
 <div class="uper">
   @if(session()->get('success'))
     <div class="alert alert-success">
-      {{ session()->get('success') }}  
+      {{ session()->get('success') }}
 </div><br />
   @endif
-  
+
     <form method="post" action="{{ route('addLock.store') }}">
         @csrf
-        
+
         <div class="form-group row">
             <label for="lock" class="col-md-4 col-form-label text-md-right">{{ __('ล๊อกที่') }}</label>
 
@@ -143,6 +146,6 @@ body {font-family: Arial;
             </div>
         </div>
     </form>
-        
+
 <div>
 @endsection

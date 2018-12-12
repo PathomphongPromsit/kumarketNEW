@@ -49,6 +49,9 @@ body {font-family: Arial;
           <a class="item" href='/addAdmin'>
             เพิ่มผู้ดูแลระบบ
           </a>
+          <a class="item" href='/addLock'>
+            เพิ่มล็อกว่าง
+          </a>
           <a class="item" href='/edit'>
             แก้ไขรายชื่อ
           </a>

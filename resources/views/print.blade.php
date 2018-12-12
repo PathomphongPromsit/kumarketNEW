@@ -42,11 +42,11 @@
   <body>
 
 
-        
+
 <div class="ui segment">
   <img width="100%" src="<?php echo asset('img/02.gif'); ?>">
         <main class="py-4">
-            
+
                 <div class="ui green inverted huge menu">
             <div class="header item">
               KU SRC Night Market
@@ -62,6 +62,9 @@
           </a>
           <a class="item" href='addAdmin'>
             เพิ่มผู้ดูแลระบบ
+          </a>
+          <a class="item" href='addLock'>
+            เพิ่มล็อกว่าง
           </a>
           <a class="item" href='edit'>
             แก้ไขรายชื่อ
@@ -79,7 +82,7 @@
 
                         @else
                             <li>
-                                
+
 
                                 <div class="ui item" aria-labelledby="navbarDropdown">
                                      <a>
@@ -100,7 +103,7 @@
                     </ul>
             </div>
         </main>
- 
+
 <div div class="card" style="text-align:center">
     <div style="margin:10px;overflow:auto;">
     <h3>พิมพ์สรุป</h3>
@@ -224,4 +227,3 @@
  </div>
   </body>
 </html>
-

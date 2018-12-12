@@ -25,6 +25,9 @@
           <a class="item" href='/add'>
             เพิ่มรายชื่อ
           </a>
+					<a class="item" href='/addLock'>
+            เพิ่มล็อกว่าง
+          </a>
           <a class="item" href='/addAdmin'>
             เพิ่มผู้ดูแลระบบ
           </a>
@@ -43,7 +46,7 @@
 
                         @else
                             <li>
-                                
+
 
                                 <div class="ui item" aria-labelledby="navbarDropdown">
                                     <a>
@@ -67,7 +70,7 @@
         <div class="uper">
 				@if(session()->get('success'))
 						<div class="alert alert-success">
-						{{ session()->get('success') }}  
+						{{ session()->get('success') }}
         </div><br />
             @endif
 
@@ -101,8 +104,8 @@
                 <!-- <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a> -->
                 <a class="ui mini red button" onclick="return confirm('ยืนยันการลบข้อมูลหรือไม่ ? ')" href= "{{route('del',$name->id)}}" >ลบผู้ใช้</a>
               </td>
-          
-              
+
+
             </tr>
             @endforeach
           </tbody>
@@ -153,8 +156,8 @@
                 <!-- <a href = "{{route('del',$name->id)}}" class = "ui mini button">Delete</a> -->
                 <a class="ui mini red button" onclick="return confirm('ยืนยันการลบข้อมูลหรือไม่ ? ')" href= "{{route('del',$name->id)}}" >ลบผู้ใช้</a>
               </td>
-          
-              
+
+
             </tr>
             @endforeach
           </tbody>
@@ -211,7 +214,7 @@
           <div class="ui approve button">Approve</div>
           <div class="ui cancel button">Cancel</div>
         </div>
-      </div> 
+      </div>
 
 
 

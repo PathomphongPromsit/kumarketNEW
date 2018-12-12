@@ -33,6 +33,9 @@
           <a class="item" href='addAdmin'>
             เพิ่มผู้ดูแลระบบ
           </a>
+          <a class="item" href='addLock'>
+            เพิ่มล็อกว่าง
+          </a>
           <a class="item" href='edit'>
             แก้ไขรายชื่อ
           </a>
@@ -103,14 +106,14 @@
                             <div class="uper">
                                 @if(session()->get('success'))
                                     <div class="alert alert-success">
-                                    {{ session()->get('success') }}  
+                                    {{ session()->get('success') }}
                             </div><br />
                                 @endif
                               <div class="card">
                                   <div class="card-header">{{ __('เพิ่มรายชื่อ') }}</div>
 
                                   <div class="card-body">
-  
+
                                       <form method="POST" action="{{ route('register') }}">
                                           @csrf
 
