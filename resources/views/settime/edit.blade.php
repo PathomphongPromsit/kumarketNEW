@@ -11,6 +11,10 @@
 <style>
   .uper {
     margin-top: 40px;
+    font-size: 20pt;
+  }
+  .field{
+    font-size: 15pt; 
   }
 </style>
 

@@ -171,14 +171,14 @@
 							<br>
 							<br>
 							<?php if(Auth::user()->ban== 1){?>
-								<h4 style = "color:red;">คุณถูกแบน!</h4>
+								<h2 style = "color:red;">คุณถูกแบน!</h2>
 							<?php };?>
 							<?php if(Auth::user()->ban != 1){?>
 								<?php if(Auth::user()->come == 1){?>
-									สถานะปัจจุบัน:  "มา"
+									<h2>สถานะปัจจุบัน:  "มา"</h2>
 								<?php };?>
 								<?php if(Auth::user()->come != 1){?>
-									สถานะปัจจุบัน:  "ไม่มา"
+									<h2>สถานะปัจจุบัน:  "ไม่มา"</h2>
 								<?php };?>
 							<?php };?>
 							<br>
