@@ -201,7 +201,6 @@
 
 							<div class="inline field">
 						</form>
-
 					</div>
 				</div>
 			</div>
